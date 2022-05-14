@@ -1,5 +1,5 @@
-public class CaseBonus extends Case {
-  private String couleur = "Vert";
+public class CaseDefinition extends Case {
+  private String couleur = "bleu";
 
   @Override
   public String getCouleur() {
