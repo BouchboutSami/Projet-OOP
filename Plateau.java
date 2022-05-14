@@ -35,7 +35,6 @@ public class Plateau {
   public void Afficher_tab() {
     for (Case case1 : tab_cases) {
       System.out.println(case1);
-      System.out.println("hello");
     }
   }
 }
