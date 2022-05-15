@@ -32,9 +32,9 @@ public class Plateau {
     }
   }
 
-  public void Afficher_tab() {
-    for (Case case1 : tab_cases) {
-      System.out.println(case1);
+  public void Afficher_plateau() {
+    for (int i = 0; i < tab_cases.length; i++) {
+      System.out.println("Case[" + i + "] contient une case " + tab_cases[i].getCouleur());
     }
   }
 }

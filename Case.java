@@ -8,4 +8,7 @@ public abstract class Case {
     return couleur;
   }
 
+  public void ActionCase(Partie partie) {
+  }
+
 }
