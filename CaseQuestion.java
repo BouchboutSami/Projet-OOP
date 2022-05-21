@@ -1,3 +1,3 @@
-public class CaseQuestion extends Case {
+public abstract class CaseQuestion extends Case {
 
 }

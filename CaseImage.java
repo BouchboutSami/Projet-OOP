@@ -1,9 +1,8 @@
-public class CaseImage extends Case {
+public class CaseImage extends CaseQuestion {
   private String couleur = "Rose";
 
   @Override
   public String getCouleur() {
-    // TODO Auto-generated method stub
     return this.couleur;
   }
 }

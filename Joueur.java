@@ -31,4 +31,18 @@ public class Joueur {
   public void Maj_infos_joueur(File file, Joueur joueur) {
     // mise a jour fichier avec la partie actuelle du joueur
   }
+
+  /**
+   * @return the partie
+   */
+  public Partie getPartie() {
+    return partie;
+  }
+
+  /**
+   * @param partie the partie to set
+   */
+  public void setPartie(Partie partie) {
+    this.partie = partie;
+  }
 }

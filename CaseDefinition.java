@@ -1,9 +1,8 @@
-public class CaseDefinition extends Case {
+public class CaseDefinition extends CaseQuestion {
   private String couleur = "bleu";
 
   @Override
   public String getCouleur() {
-    // TODO Auto-generated method stub
     return this.couleur;
   }
 }

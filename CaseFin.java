@@ -6,7 +6,6 @@ public class CaseFin extends Case {
 
   @Override
   public String getCouleur() {
-    // TODO Auto-generated method stub
     return this.couleur;
   }
 }
