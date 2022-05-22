@@ -12,5 +12,6 @@ public class test {
     Joueur player = new Joueur(pseudo);
     player.Afficher_infos();
     scanner.close();
+    System.out.println("HELLO");
   }
 }

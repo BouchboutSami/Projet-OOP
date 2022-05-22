@@ -8,7 +8,6 @@ public class Partie {
   public Partie() {
     // traitement de fichier pour avoir le score actuel
     // traitement de fichier pour avoir l'indice actuel
-
   }
 
   /**
