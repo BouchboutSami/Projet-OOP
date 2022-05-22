@@ -8,6 +8,7 @@ public class Partie {
   public Partie(Joueur player) {
     // traitement de fichier pour avoir le score actuel
     // traitement de fichier pour avoir l'indice actuel
+    
   }
 
   /**
