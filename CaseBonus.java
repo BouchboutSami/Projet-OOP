@@ -12,4 +12,8 @@ public class CaseBonus extends Case {
     partie.Maj_indice(2);
   }
 
+  public void setCouleur(String couleur) {
+    this.couleur = couleur;
+  }
+   
 }

@@ -28,6 +28,19 @@ public class Joueur {
         this.partie = new Partie();
         this.partie.setIndice_actuel(0);
         this.partie.setScore_actuel(0);
+        String info = "";
+        try {
+          FileWriter out = new FileWriter("./Joueurs.txt", true);
+          info = nom_joueur + " 0" + " 0" + " 0 \n";
+
+          System.out.println(info);
+          out.write(info);
+          out.close();
+
+        } catch (IOException e) {
+          System.out.println("file not found in output ");
+          e.printStackTrace();
+        }
       }
     }
     reader.close();
@@ -53,17 +66,4 @@ public class Joueur {
     // mise a jour fichier avec la partie actuelle du joueur
   }
 
-  /**
-   * @return the partie
-   */
-  public Partie getPartie() {
-    return partie;
-  }
-
-  /**
-   * @param partie the partie to set
-   */
-  public void setPartie(Partie partie) {
-    this.partie = partie;
-  }
 }

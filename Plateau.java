@@ -21,7 +21,7 @@ public class Plateau {
         do {
           nb_gen = (int) (Math.random() * 100);
         } while (tab_cases[nb_gen] != null);
-        tab_cases[nb_gen] = tab_generator[j];
+        tab_cases[nb_gen] =  tab_generator[j];
       }
     }
 
@@ -33,7 +33,9 @@ public class Plateau {
   }
 
   public void Afficher_plateau() {
+    int m = 1;
     for (int i = 0; i < tab_cases.length; i++) {
+      
       System.out.println("Case[" + i + "] contient une case " + tab_cases[i].getCouleur());
     }
   }

@@ -3,6 +3,15 @@ public class Partie {
   private int indice_actuel;
 
   /**
+   * 
+   */
+  public Partie() {
+    // traitement de fichier pour avoir le score actuel
+    // traitement de fichier pour avoir l'indice actuel
+
+  }
+
+  /**
    * @return the score_actuel
    */
   public int getScore_actuel() {
