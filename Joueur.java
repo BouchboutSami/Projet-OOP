@@ -28,19 +28,19 @@ public class Joueur {
         this.partie = new Partie();
         this.partie.setIndice_actuel(0);
         this.partie.setScore_actuel(0);
-        String info = "";
-        try {
-          FileWriter out = new FileWriter("./Joueurs.txt", true);
-          info = nom_joueur + " 0" + " 0" + " 0 \n";
+      }
+    }
+    if (trouv == false) {
+      String info = "";
+      try {
+        FileWriter out = new FileWriter("./Joueurs.txt", true);
+        info = "\n" + nom_joueur + " 0" + " 0" + " 0";
+        out.write(info);
+        out.close();
 
-          System.out.println(info);
-          out.write(info);
-          out.close();
-
-        } catch (IOException e) {
-          System.out.println("file not found in output ");
-          e.printStackTrace();
-        }
+      } catch (IOException e) {
+        System.out.println("file not found in output ");
+        e.printStackTrace();
       }
     }
     reader.close();
@@ -55,9 +55,6 @@ public class Joueur {
     System.out.println("score_actuel : " + this.partie.getScore_actuel());
   }
 
-  /**
-   * @return the nom_joueur
-   */
   public String getNom_joueur() {
     return nom_joueur;
   }

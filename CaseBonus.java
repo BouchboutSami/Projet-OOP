@@ -15,5 +15,5 @@ public class CaseBonus extends Case {
   public void setCouleur(String couleur) {
     this.couleur = couleur;
   }
-   
+
 }

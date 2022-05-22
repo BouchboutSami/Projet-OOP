@@ -11,17 +11,17 @@ public class Plateau {
    * 
    */
   public Plateau() {
-    Case[] tab_generator = new Case[] { new CaseSaut(), new CaseMalus(), new CaseBonus(), new CaseImage(),
-        new CaseDefinition() };
     tab_cases[0] = new CaseDepart();
     tab_cases[99] = new CaseFin();
-    for (int j = 0; j < tab_generator.length; j++) {
+    for (int j = 0; j < 5; j++) {
       for (int i = 0; i < 5; i++) {
+        Case[] tab_generator = new Case[] { new CaseSaut(), new CaseMalus(), new CaseBonus(), new CaseImage(),
+            new CaseDefinition() };
         int nb_gen;
         do {
           nb_gen = (int) (Math.random() * 100);
         } while (tab_cases[nb_gen] != null);
-        tab_cases[nb_gen] =  tab_generator[j];
+        tab_cases[nb_gen] = tab_generator[j];
       }
     }
 
@@ -33,9 +33,7 @@ public class Plateau {
   }
 
   public void Afficher_plateau() {
-    int m = 1;
     for (int i = 0; i < tab_cases.length; i++) {
-      
       System.out.println("Case[" + i + "] contient une case " + tab_cases[i].getCouleur());
     }
   }
