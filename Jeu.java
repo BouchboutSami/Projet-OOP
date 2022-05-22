@@ -1,9 +1,6 @@
-import java.io.File;
+import java.io.*;
+import java.util.*;
 
 public class Jeu {
-
-  public boolean Exists(String pseudo, File file) {
-    return true;
-  }
 
 }
