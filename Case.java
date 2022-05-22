@@ -11,4 +11,8 @@ public abstract class Case {
   public void ActionCase(Partie partie) {
   }
 
+  public void setCouleur(String couleur) {
+    this.couleur = couleur;
+  }
+
 }
