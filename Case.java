@@ -1,5 +1,13 @@
-public abstract class Case {
+public abstract class Case implements Cloneable {
   private String couleur = "a";
+   
+  @Override
+  protected Object clone()
+      throws CloneNotSupportedException
+  {
+      // Super() keyword refers to parent class
+      return super.clone();
+  }
 
   /**
    * @return the couleur

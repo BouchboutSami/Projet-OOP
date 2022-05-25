@@ -1,13 +1,14 @@
 public class Partie {
   private int score_actuel;
   private int indice_actuel;
-
+  private Plateau plateau ; 
   /**
    * 
    */
   public Partie() {
     // traitement de fichier pour avoir le score actuel
     // traitement de fichier pour avoir l'indice actuel
+      
   }
 
   /**
@@ -54,5 +55,13 @@ public class Partie {
 
   public void Lancer_des() {
     Maj_indice((int) (Math.random() * 12));
+  }
+
+  public Plateau getPlateau() {
+    return plateau;
+  }
+
+  public void setPlateau(Plateau plateau) {
+    this.plateau = plateau;
   }
 }

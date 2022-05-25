@@ -1,7 +1,7 @@
 import java.io.*;
 import java.util.*;
 
-public class Joueur {
+public class Joueur implements Serializable {
   private String nom_joueur;
   private int Meilleur_score_personnel;
   private Partie partie;
@@ -28,6 +28,7 @@ public class Joueur {
         this.partie = new Partie();
         this.partie.setIndice_actuel(0);
         this.partie.setScore_actuel(0);
+        this.partie.setPlateau(new Plateau());
       }
     }
     if (trouv == false) {
@@ -53,6 +54,8 @@ public class Joueur {
     System.out.println("Meilleur score : " + this.Meilleur_score_personnel);
     System.out.println("Indice actuel : " + this.partie.getIndice_actuel());
     System.out.println("score_actuel : " + this.partie.getScore_actuel());
+    partie.getPlateau().Afficher_plateau(); 
+
   }
 
   public String getNom_joueur() {
