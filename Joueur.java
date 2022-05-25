@@ -4,7 +4,7 @@ import java.util.*;
 public class Joueur {
   private String nom_joueur;
   private int Meilleur_score_personnel;
-  private Partie partie;
+  public Partie partie;
 
   public Joueur(String nom_joueur) throws IOException {
     FileReader file = new FileReader("./Joueurs.txt");
@@ -22,12 +22,14 @@ public class Joueur {
         this.partie.setIndice_actuel(Integer.parseInt(stn.nextToken()));
         this.partie.setScore_actuel(Integer.parseInt(stn.nextToken()));
         this.Meilleur_score_personnel = Integer.parseInt(stn.nextToken());
+        this.partie.setPlateau(new Plateau());
       } else {
         this.nom_joueur = nom_joueur;
         this.Meilleur_score_personnel = 0;
         this.partie = new Partie();
         this.partie.setIndice_actuel(0);
         this.partie.setScore_actuel(0);
+        this.partie.setPlateau(new Plateau());
       }
     }
     if (trouv == false) {
@@ -53,14 +55,14 @@ public class Joueur {
     System.out.println("Meilleur score : " + this.Meilleur_score_personnel);
     System.out.println("Indice actuel : " + this.partie.getIndice_actuel());
     System.out.println("score_actuel : " + this.partie.getScore_actuel());
+    // this.partie.getPlateau().Afficher_plateau();
   }
 
   public String getNom_joueur() {
     return nom_joueur;
   }
 
-  public void Maj_infos_joueur(File file, Joueur joueur) {
-    // mise a jour fichier avec la partie actuelle du joueur
+  public void Maj_infos_joueur() {
   }
 
 }

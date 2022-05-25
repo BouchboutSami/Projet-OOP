@@ -37,4 +37,12 @@ public class Plateau {
       System.out.println("Case[" + i + "] contient une case " + tab_cases[i].getCouleur());
     }
   }
+
+  /**
+   * @return the tab_cases
+   */
+  public Case[] getTab_cases() {
+    return tab_cases;
+  }
+
 }
