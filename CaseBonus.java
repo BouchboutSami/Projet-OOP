@@ -8,6 +8,8 @@ public class CaseBonus extends Case {
 
   @Override
   public void ActionCase(Partie partie) {
+    System.out.println("Vous etes sur une" + this.getClass().getName()
+        + " donc vous avez un bonus de 10 points et vous avancez de deux cases");
     partie.AjouterScore(10);
     partie.Maj_indice(2);
   }

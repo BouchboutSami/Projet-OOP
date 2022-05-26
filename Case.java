@@ -1,4 +1,6 @@
-public abstract class Case implements Cloneable {
+import java.io.Serializable;
+
+public abstract class Case implements Cloneable, Serializable  {
   private String couleur = "a";
    
   @Override

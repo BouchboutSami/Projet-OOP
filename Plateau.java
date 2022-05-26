@@ -1,9 +1,10 @@
+import java.io.Serializable;
 
 /**
  * Plateau
  */
 
-public class Plateau {
+public class Plateau implements Serializable   {
   private final int nb_cases = 100;
   private Case[] tab_cases = new Case[nb_cases];
 
@@ -37,4 +38,12 @@ public class Plateau {
       System.out.println("Case[" + i + "] contient une case " + tab_cases[i].getCouleur());
     }
   }
+
+  /**
+   * @return the tab_cases
+   */
+  public Case[] getTab_cases() {
+    return tab_cases;
+  }
+
 }
