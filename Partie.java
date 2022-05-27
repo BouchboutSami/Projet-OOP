@@ -1,4 +1,6 @@
-public class Partie {
+import java.io.Serializable;
+
+public class Partie implements Serializable {
   private int score_actuel;
   private int indice_actuel;
   private Plateau plateau;
@@ -7,8 +9,8 @@ public class Partie {
    * 
    */
   public Partie() {
-    // traitement de fichier pour avoir le score actuel
-    // traitement de fichier pour avoir l'indice actuel
+    this.plateau = new Plateau();
+      
   }
 
   /**
