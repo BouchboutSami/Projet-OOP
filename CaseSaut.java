@@ -1,5 +1,7 @@
-public class CaseParcours extends Case {
-  private String couleur = "Gris";
+
+
+public class CaseSaut extends Case {
+  private String couleur = "Orange";
 
   @Override
   public String getCouleur() {
@@ -8,7 +10,7 @@ public class CaseParcours extends Case {
 
   @Override
   public void ActionCase(Partie partie) {
-    partie.Lancer_des();
+    partie.setIndice_actuel((int) (Math.random() * 99));
   }
 
 }

@@ -1,8 +1,8 @@
-import java.io.Serializable;
 
-public class CaseDepart extends Case implements Serializable {
-  private String couleur = "Jaune";
-  public CaseDepart() {}
+
+public class CaseParcours extends Case {
+  private String couleur = "Gris";
+
   @Override
   public String getCouleur() {
     return this.couleur;

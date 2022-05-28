@@ -1,3 +1,5 @@
+
+
 // import java.io.*;
 // import java.util.*;
 
@@ -41,7 +43,7 @@ public class test extends Application {
     public void start(Stage primaryStage) {
         Parent root;
         try {
-            root = FXMLLoader.load(getClass().getResource("./mainScene.fxml"));
+            root = FXMLLoader.load(getClass().getResource("LoginPage.fxml"));
             Scene scene = new Scene(root);
             primaryStage.setTitle("Hello World!");
             primaryStage.setScene(scene);
