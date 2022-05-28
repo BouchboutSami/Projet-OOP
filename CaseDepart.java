@@ -1,3 +1,5 @@
+
+
 import java.io.Serializable;
 
 public class CaseDepart extends Case implements Serializable {

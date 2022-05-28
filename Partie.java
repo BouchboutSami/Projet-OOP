@@ -1,3 +1,5 @@
+
+
 import java.io.Serializable;
 
 public class Partie implements Serializable {
