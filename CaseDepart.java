@@ -1,5 +1,10 @@
-public class CaseDepart extends Case {
+import java.io.Serializable;
+
+public class CaseDepart extends Case implements Serializable {
   private String couleur = "Jaune";
+
+  public CaseDepart() {
+  }
 
   @Override
   public String getCouleur() {

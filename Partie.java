@@ -1,9 +1,13 @@
-public class Partie {
+import java.io.Serializable;
+
+public class Partie implements Serializable {
   private int score_actuel;
   private int indice_actuel;
   private Plateau plateau;
 
   public Partie() {
+    this.plateau = new Plateau();
+
   }
 
   public Plateau getPlateau() {
