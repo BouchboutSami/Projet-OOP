@@ -11,10 +11,10 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="LoginPageController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="596.0" style="-fx-background-color: blue;" styleClass="bg" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="LoginPageController">
    
    <children>
-      <ImageView fitHeight="400.0" fitWidth="600.0" pickOnBounds="true">
+      <ImageView fitHeight="400.0" fitWidth="596.0" pickOnBounds="true" smooth="false">
          <image>
             <Image url="@bgi.png" />
          </image>
@@ -23,7 +23,7 @@
          <children>
             <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Welcome">
                <font>
-                  <Font size="40.0" />
+                  <Font name="Calibri" size="40.0" />
                </font>
                <VBox.margin>
                   <Insets top="20.0" />
@@ -36,13 +36,13 @@
                         <Font size="23.0" />
                      </font>
                   </Label>
-                  <TextField prefHeight="26.0" prefWidth="248.0" />
+                  <TextField fx:id="userinput" prefHeight="26.0" prefWidth="248.0" />
                </children>
                <VBox.margin>
                   <Insets top="48.0" />
                </VBox.margin>
             </VBox>
-            <Button mnemonicParsing="false" prefHeight="26.0" prefWidth="100.0" text="start">
+            <Button mnemonicParsing="false" onAction="#Authenticate" prefHeight="26.0" prefWidth="100.0" text="start">
                <VBox.margin>
                   <Insets top="30.0" />
                </VBox.margin>

@@ -10,7 +10,9 @@ public class CaseSaut extends Case {
 
   @Override
   public void ActionCase(Partie partie) {
-    partie.setIndice_actuel((int) (Math.random() * 99));
+    int indice = (int) (Math.random() * 99);
+    partie.setIndice_actuel(indice);
+    System.out.println("Saut à "+indice);
   }
 
 }
