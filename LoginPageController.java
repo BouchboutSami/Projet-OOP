@@ -21,9 +21,8 @@ public class LoginPageController{
     @FXML
     void Authenticate(ActionEvent event) throws IOException {
         Joueur user =  game.authenticate(userinput.getText());
-        int hmx = user.partie.getIndice_actuel();
-        System.out.println(hmx);
-        for (int index =hmx   ; index < hmx+10; index++) {
+        
+        for (int index = user.partie.getIndice_actuel(); index < user.partie.getIndice_actuel()+10; index++) {
             user.partie.getPlateau().getTab_cases()[index].ActionCase(user.partie);
         }
         FXMLLoader loader = new FXMLLoader(getClass().getResource("Info.fxml"));
