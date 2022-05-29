@@ -10,4 +10,6 @@ public class CaseFin extends Case {
   public String getCouleur() {
     return this.couleur;
   }
+
+  
 }

@@ -7,4 +7,10 @@ public class CaseDefinition extends CaseQuestion {
   public String getCouleur() {
     return this.couleur;
   }
+
+  @Override
+  public void ActionCase(Partie partie) {
+    // TODO Auto-generated method stub
+    System.out.println("Case Definition Action Case");
+  }
 }

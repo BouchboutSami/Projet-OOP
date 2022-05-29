@@ -42,16 +42,19 @@ public void  settabjoueur(){
         e.printStackTrace();
       }
 }
-public Joueur authenticate(String username){
+public Joueur authenticate(String username ){
      Joueur joueur1 ;
     gettabjoueur();
     joueur1 = this.joueurs.get(username); 
     if( joueur1 == null ){
-        
+        System.out.println("new gamer");
         joueur1 = new Joueur(username);
         joueurs.put(username, joueur1);
         settabjoueur();
     }
+    
+    
+
     
     
     return joueur1;
@@ -82,4 +85,5 @@ public Joueur first_time_authenticate(String username){
 
 
 }
+
 }

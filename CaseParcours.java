@@ -10,6 +10,7 @@ public class CaseParcours extends Case {
 
   @Override
   public void ActionCase(Partie partie) {
+    System.out.println("Case Parcours");
     partie.Lancer_des();
   }
 

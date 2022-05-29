@@ -63,6 +63,10 @@ public class Partie implements Serializable {
       this.score_actuel = 0;
     }
   }
+   
+
+
+
 
   public void Maj_indice(int nb_ajout) {
     if (this.indice_actuel + nb_ajout < 0) {
