@@ -43,9 +43,9 @@ public class test extends Application {
     public void start(Stage primaryStage) {
         Parent root;
         try {
-            root = FXMLLoader.load(getClass().getResource("LoginPage.fxml"));
+            root =   FXMLLoader.load(getClass().getResource("LoginPage.fxml"));
             Scene scene = new Scene(root);
-            primaryStage.setTitle("Hello World!");
+            primaryStage.setTitle("Hello Whhorld!");
             primaryStage.setScene(scene);
             primaryStage.show();
         } catch (IOException e) {
