@@ -45,7 +45,6 @@ public class Jeu implements Serializable {
     gettabjoueur();
     joueur1 = this.joueurs.get(username);
     if (joueur1 == null) {
-
       joueur1 = new Joueur(username);
       joueurs.put(username, joueur1);
       settabjoueur();
