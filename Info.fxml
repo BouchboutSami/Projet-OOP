@@ -2,6 +2,8 @@
 
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
@@ -10,12 +12,11 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Text?>
 
-
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="757.0" prefWidth="1149.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="InfoController">
    <children>
       <HBox layoutX="1.0" layoutY="-2.0" prefHeight="760.0" prefWidth="1149.0">
          <children>
-            <GridPane fx:id="plateau" hgap="10.0" prefHeight="708.0" prefWidth="903.0" vgap="10.0">
+            <GridPane fx:id="plateau" hgap="5.0" prefHeight="708.0" prefWidth="903.0" vgap="5.0">
               <columnConstraints>
                 <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
                 <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -71,7 +72,7 @@
                   <Button defaultButton="true" mnemonicParsing="false" prefHeight="428.0" prefWidth="493.0" text="21" textFill="TRANSPARENT" GridPane.rowIndex="9" />
                   <Button defaultButton="true" mnemonicParsing="false" prefHeight="428.0" prefWidth="493.0" text="23" textFill="TRANSPARENT" GridPane.rowIndex="11" />
                   <Button defaultButton="true" mnemonicParsing="false" prefHeight="428.0" prefWidth="493.0" text="24" textFill="TRANSPARENT" GridPane.rowIndex="12" />
-                  <Button defaultButton="true" mnemonicParsing="false" prefHeight="428.0" prefWidth="493.0" text="25" textFill="TRANSPARENT" GridPane.rowIndex="13" />
+                  <Button defaultButton="true" mnemonicParsing="false" prefHeight="428.0" prefWidth="493.0" style="-fx-background-radius: 0 0 0 20;" text="25" textFill="TRANSPARENT" GridPane.rowIndex="13" />
                   <Button defaultButton="true" mnemonicParsing="false" prefHeight="428.0" prefWidth="493.0" text="26" textFill="TRANSPARENT" GridPane.columnIndex="1" GridPane.rowIndex="13" />
                   <Button defaultButton="true" mnemonicParsing="false" prefHeight="428.0" prefWidth="493.0" text="27" textFill="TRANSPARENT" GridPane.columnIndex="2" GridPane.rowIndex="13" />
                   <Button defaultButton="true" mnemonicParsing="false" prefHeight="428.0" prefWidth="493.0" text="28" textFill="TRANSPARENT" GridPane.columnIndex="3" GridPane.rowIndex="13" />
@@ -83,7 +84,7 @@
                   <Button defaultButton="true" mnemonicParsing="false" prefHeight="428.0" prefWidth="493.0" text="35" textFill="TRANSPARENT" GridPane.columnIndex="10" GridPane.rowIndex="13" />
                   <Button defaultButton="true" mnemonicParsing="false" prefHeight="428.0" prefWidth="493.0" text="29" textFill="TRANSPARENT" GridPane.columnIndex="4" GridPane.rowIndex="13" />
                   <Button defaultButton="true" mnemonicParsing="false" prefHeight="428.0" prefWidth="493.0" text="36" textFill="TRANSPARENT" GridPane.columnIndex="11" GridPane.rowIndex="13" />
-                  <Button defaultButton="true" mnemonicParsing="false" prefHeight="428.0" prefWidth="493.0" text="37" textFill="TRANSPARENT" GridPane.columnIndex="12" GridPane.rowIndex="13" />
+                  <Button defaultButton="true" mnemonicParsing="false" prefHeight="428.0" prefWidth="493.0" style="-fx-background-radius: 0 0 20 0;" text="37" textFill="TRANSPARENT" GridPane.columnIndex="12" GridPane.rowIndex="13" />
                   <Button defaultButton="true" mnemonicParsing="false" prefHeight="428.0" prefWidth="493.0" text="39" textFill="TRANSPARENT" GridPane.columnIndex="12" GridPane.rowIndex="11" />
                   <Button defaultButton="true" mnemonicParsing="false" prefHeight="428.0" prefWidth="493.0" text="40" textFill="TRANSPARENT" GridPane.columnIndex="12" GridPane.rowIndex="10" />
                   <Button defaultButton="true" mnemonicParsing="false" prefHeight="428.0" prefWidth="493.0" text="41" textFill="TRANSPARENT" GridPane.columnIndex="12" GridPane.rowIndex="9" />
@@ -99,7 +100,7 @@
                   <Button defaultButton="true" mnemonicParsing="false" prefHeight="428.0" prefWidth="493.0" text="56" textFill="TRANSPARENT" GridPane.columnIndex="4" GridPane.rowIndex="2" />
                   <Button defaultButton="true" mnemonicParsing="false" prefHeight="428.0" prefWidth="493.0" text="57" textFill="TRANSPARENT" GridPane.columnIndex="3" GridPane.rowIndex="2" />
                   <Button defaultButton="true" mnemonicParsing="false" prefHeight="428.0" prefWidth="493.0" text="49" textFill="TRANSPARENT" GridPane.columnIndex="11" GridPane.rowIndex="2" />
-                  <Button defaultButton="true" mnemonicParsing="false" prefHeight="428.0" prefWidth="493.0" text="48" textFill="TRANSPARENT" GridPane.columnIndex="12" GridPane.rowIndex="2" />
+                  <Button defaultButton="true" mnemonicParsing="false" prefHeight="428.0" prefWidth="493.0" style="-fx-background-radius: 0 20 0 0;" text="48" textFill="TRANSPARENT" GridPane.columnIndex="12" GridPane.rowIndex="2" />
                   <Button defaultButton="true" mnemonicParsing="false" prefHeight="428.0" prefWidth="493.0" text="22" textFill="TRANSPARENT" GridPane.rowIndex="10" />
                   <Button defaultButton="true" mnemonicParsing="false" prefHeight="428.0" prefWidth="493.0" text="38" textFill="TRANSPARENT" GridPane.columnIndex="12" GridPane.rowIndex="12" />
                   <Button defaultButton="true" mnemonicParsing="false" prefHeight="428.0" prefWidth="493.0" text="45" textFill="TRANSPARENT" GridPane.columnIndex="12" GridPane.rowIndex="5" />
@@ -108,7 +109,7 @@
                   <Button defaultButton="true" mnemonicParsing="false" prefHeight="428.0" prefWidth="493.0" text="2" textFill="TRANSPARENT" GridPane.columnIndex="10" />
                   <Button defaultButton="true" mnemonicParsing="false" prefHeight="428.0" prefWidth="493.0" text="1" textFill="TRANSPARENT" GridPane.columnIndex="11" />
                   <Button defaultButton="true" mnemonicParsing="false" prefHeight="428.0" prefWidth="493.0" text="0" textFill="TRANSPARENT" GridPane.columnIndex="12" />
-                  <Button defaultButton="true" mnemonicParsing="false" prefHeight="428.0" prefWidth="493.0" text="58" textFill="TRANSPARENT" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                  <Button defaultButton="true" mnemonicParsing="false" prefHeight="428.0" prefWidth="493.0" style="-fx-background-radius: 20 0 0 0;" text="58" textFill="TRANSPARENT" GridPane.columnIndex="2" GridPane.rowIndex="2" />
                   <Button defaultButton="true" mnemonicParsing="false" prefHeight="428.0" prefWidth="493.0" text="59" textFill="TRANSPARENT" GridPane.columnIndex="2" GridPane.rowIndex="3" />
                   <Button defaultButton="true" mnemonicParsing="false" prefHeight="428.0" prefWidth="493.0" text="60" textFill="TRANSPARENT" GridPane.columnIndex="2" GridPane.rowIndex="4" />
                   <Button defaultButton="true" mnemonicParsing="false" prefHeight="428.0" prefWidth="493.0" text="61" textFill="TRANSPARENT" GridPane.columnIndex="2" GridPane.rowIndex="5" />
@@ -117,7 +118,7 @@
                   <Button defaultButton="true" mnemonicParsing="false" prefHeight="428.0" prefWidth="493.0" text="64" textFill="TRANSPARENT" GridPane.columnIndex="2" GridPane.rowIndex="8" />
                   <Button defaultButton="true" mnemonicParsing="false" prefHeight="428.0" prefWidth="493.0" text="65" textFill="TRANSPARENT" GridPane.columnIndex="2" GridPane.rowIndex="9" />
                   <Button defaultButton="true" mnemonicParsing="false" prefHeight="428.0" prefWidth="493.0" text="66" textFill="TRANSPARENT" GridPane.columnIndex="2" GridPane.rowIndex="10" />
-                  <Button defaultButton="true" mnemonicParsing="false" prefHeight="428.0" prefWidth="493.0" text="67" textFill="TRANSPARENT" GridPane.columnIndex="2" GridPane.rowIndex="11" />
+                  <Button defaultButton="true" mnemonicParsing="false" prefHeight="428.0" prefWidth="493.0" style="-fx-background-radius: 0 0 0 20;" text="67" textFill="TRANSPARENT" GridPane.columnIndex="2" GridPane.rowIndex="11" />
                   <Button defaultButton="true" mnemonicParsing="false" prefHeight="428.0" prefWidth="493.0" text="68" textFill="TRANSPARENT" GridPane.columnIndex="3" GridPane.rowIndex="11" />
                   <Button defaultButton="true" mnemonicParsing="false" prefHeight="428.0" prefWidth="493.0" text="69" textFill="TRANSPARENT" GridPane.columnIndex="4" GridPane.rowIndex="11" />
                   <Button defaultButton="true" mnemonicParsing="false" prefHeight="428.0" prefWidth="493.0" text="70" textFill="TRANSPARENT" GridPane.columnIndex="5" GridPane.rowIndex="11" />
@@ -125,40 +126,59 @@
                   <Button defaultButton="true" mnemonicParsing="false" prefHeight="428.0" prefWidth="493.0" text="72" textFill="TRANSPARENT" GridPane.columnIndex="7" GridPane.rowIndex="11" />
                   <Button defaultButton="true" mnemonicParsing="false" prefHeight="428.0" prefWidth="493.0" text="73" textFill="TRANSPARENT" GridPane.columnIndex="8" GridPane.rowIndex="11" />
                   <Button defaultButton="true" mnemonicParsing="false" prefHeight="428.0" prefWidth="493.0" text="74" textFill="TRANSPARENT" GridPane.columnIndex="9" GridPane.rowIndex="11" />
-                  <Button defaultButton="true" mnemonicParsing="false" prefHeight="428.0" prefWidth="493.0" text="75" textFill="TRANSPARENT" GridPane.columnIndex="10" GridPane.rowIndex="11" />
+                  <Button defaultButton="true" mnemonicParsing="false" prefHeight="428.0" prefWidth="493.0" style="-fx-background-radius: 0 0 20 0;" text="75" textFill="TRANSPARENT" GridPane.columnIndex="10" GridPane.rowIndex="11" />
                   <Button defaultButton="true" mnemonicParsing="false" prefHeight="428.0" prefWidth="493.0" text="76" textFill="TRANSPARENT" GridPane.columnIndex="10" GridPane.rowIndex="10" />
                   <Button defaultButton="true" mnemonicParsing="false" prefHeight="428.0" prefWidth="493.0" text="77" textFill="TRANSPARENT" GridPane.columnIndex="10" GridPane.rowIndex="9" />
                   <Button defaultButton="true" mnemonicParsing="false" prefHeight="428.0" prefWidth="493.0" text="78" textFill="TRANSPARENT" GridPane.columnIndex="10" GridPane.rowIndex="8" />
                   <Button defaultButton="true" mnemonicParsing="false" prefHeight="428.0" prefWidth="493.0" text="79" textFill="TRANSPARENT" GridPane.columnIndex="10" GridPane.rowIndex="7" />
                   <Button defaultButton="true" mnemonicParsing="false" prefHeight="428.0" prefWidth="493.0" text="80" textFill="TRANSPARENT" GridPane.columnIndex="10" GridPane.rowIndex="6" />
                   <Button defaultButton="true" mnemonicParsing="false" prefHeight="428.0" prefWidth="493.0" text="81" textFill="TRANSPARENT" GridPane.columnIndex="10" GridPane.rowIndex="5" />
-                  <Button defaultButton="true" mnemonicParsing="false" prefHeight="428.0" prefWidth="493.0" text="82" textFill="TRANSPARENT" GridPane.columnIndex="10" GridPane.rowIndex="4" />
+                  <Button defaultButton="true" mnemonicParsing="false" prefHeight="428.0" prefWidth="493.0" style="-fx-background-radius: 0 20 0 0;" text="82" textFill="TRANSPARENT" GridPane.columnIndex="10" GridPane.rowIndex="4" />
                   <Button defaultButton="true" mnemonicParsing="false" prefHeight="428.0" prefWidth="493.0" text="83" textFill="TRANSPARENT" GridPane.columnIndex="9" GridPane.rowIndex="4" />
                   <Button defaultButton="true" mnemonicParsing="false" prefHeight="428.0" prefWidth="493.0" text="84" textFill="TRANSPARENT" GridPane.columnIndex="8" GridPane.rowIndex="4" />
                   <Button defaultButton="true" mnemonicParsing="false" prefHeight="428.0" prefWidth="493.0" text="85" textFill="TRANSPARENT" GridPane.columnIndex="7" GridPane.rowIndex="4" />
                   <Button defaultButton="true" mnemonicParsing="false" prefHeight="428.0" prefWidth="493.0" text="86" textFill="TRANSPARENT" GridPane.columnIndex="6" GridPane.rowIndex="4" />
                   <Button defaultButton="true" mnemonicParsing="false" prefHeight="428.0" prefWidth="493.0" text="87" textFill="TRANSPARENT" GridPane.columnIndex="5" GridPane.rowIndex="4" />
-                  <Button defaultButton="true" mnemonicParsing="false" prefHeight="428.0" prefWidth="493.0" text="88" textFill="TRANSPARENT" GridPane.columnIndex="4" GridPane.rowIndex="4" />
+                  <Button defaultButton="true" mnemonicParsing="false" prefHeight="428.0" prefWidth="493.0" style="-fx-background-radius: 20 0 0 0;" text="88" textFill="TRANSPARENT" GridPane.columnIndex="4" GridPane.rowIndex="4" />
                   <Button defaultButton="true" mnemonicParsing="false" prefHeight="428.0" prefWidth="493.0" text="89" textFill="TRANSPARENT" GridPane.columnIndex="4" GridPane.rowIndex="5" />
                   <Button defaultButton="true" mnemonicParsing="false" prefHeight="428.0" prefWidth="493.0" text="90" textFill="TRANSPARENT" GridPane.columnIndex="4" GridPane.rowIndex="6" />
                   <Button defaultButton="true" mnemonicParsing="false" prefHeight="428.0" prefWidth="493.0" text="91" textFill="TRANSPARENT" GridPane.columnIndex="4" GridPane.rowIndex="7" />
                   <Button defaultButton="true" mnemonicParsing="false" prefHeight="428.0" prefWidth="493.0" text="92" textFill="TRANSPARENT" GridPane.columnIndex="4" GridPane.rowIndex="8" />
-                  <Button defaultButton="true" mnemonicParsing="false" prefHeight="428.0" prefWidth="493.0" text="93" textFill="TRANSPARENT" GridPane.columnIndex="4" GridPane.rowIndex="9" />
+                  <Button defaultButton="true" mnemonicParsing="false" prefHeight="428.0" prefWidth="493.0" style="-fx-background-radius: 0 0 0 20;" text="93" textFill="TRANSPARENT" GridPane.columnIndex="4" GridPane.rowIndex="9" />
                   <Button defaultButton="true" mnemonicParsing="false" prefHeight="428.0" prefWidth="493.0" text="94" textFill="TRANSPARENT" GridPane.columnIndex="5" GridPane.rowIndex="9" />
                   <Button defaultButton="true" mnemonicParsing="false" prefHeight="428.0" prefWidth="493.0" text="95" textFill="TRANSPARENT" GridPane.columnIndex="6" GridPane.rowIndex="9" />
                   <Button defaultButton="true" mnemonicParsing="false" prefHeight="428.0" prefWidth="493.0" text="96" textFill="TRANSPARENT" GridPane.columnIndex="7" GridPane.rowIndex="9" />
-                  <Button defaultButton="true" mnemonicParsing="false" prefHeight="428.0" prefWidth="493.0" text="98" textFill="TRANSPARENT" GridPane.columnIndex="8" GridPane.rowIndex="9" />
-                  <Button defaultButton="true" mnemonicParsing="false" prefHeight="428.0" prefWidth="493.0" text="99" textFill="TRANSPARENT" GridPane.columnIndex="8" GridPane.rowIndex="8" />
-                  <Button defaultButton="true" mnemonicParsing="false" prefHeight="428.0" prefWidth="493.0" text="12" textFill="TRANSPARENT" />
+                  <Button defaultButton="true" mnemonicParsing="false" prefHeight="428.0" prefWidth="493.0" style="-fx-background-radius: 0 0 20 0;" text="98" textFill="TRANSPARENT" GridPane.columnIndex="8" GridPane.rowIndex="9" />
+                  <Button defaultButton="true" mnemonicParsing="false" prefHeight="428.0" prefWidth="493.0" style="-fx-background-radius: 20 0 0 0;" text="12" textFill="TRANSPARENT" />
+                  <Button defaultButton="true" mnemonicParsing="false" prefHeight="428.0" prefWidth="493.0" style="-fx-background-radius: 50 50 0 0;" text="99" textFill="TRANSPARENT" GridPane.columnIndex="8" GridPane.rowIndex="8" />
                </children>
             </GridPane>
-            <VBox alignment="CENTER" prefHeight="702.0" prefWidth="281.0" style="-fx-background-color: blue;" styleClass="hh">
+            <VBox alignment="CENTER" prefHeight="702.0" prefWidth="281.0" spacing="75.0" style="-fx-background-color: blue;" styleClass="hh">
                <children>
                   <Text fx:id="infos" strokeType="INSIDE" strokeWidth="0.0" text="Text" textAlignment="CENTER">
                      <VBox.margin>
-                        <Insets />
+                        <Insets bottom="250.0" />
                      </VBox.margin>
                   </Text>
+                  <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" spacing="20.0">
+                     <children>
+                        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="20.0">
+                           <children>
+                              <ImageView fx:id="diceOne" fitHeight="100.0" fitWidth="100.0" pickOnBounds="true">
+                                 <image>
+                                    <Image url="@assets/Dice1.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fx:id="DiceTwo" fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@assets/Dice6.png" />
+                                 </image>
+                              </ImageView>
+                           </children>
+                        </HBox>
+                        <Button fx:id="LancerDe" mnemonicParsing="false" prefHeight="26.0" prefWidth="121.0" text="Lancer Dés" />
+                     </children>
+                  </VBox>
                </children>
             </VBox>
          </children>

@@ -1,5 +1,4 @@
 
-
 import java.io.Serializable;
 
 public class Partie implements Serializable {
@@ -42,10 +41,6 @@ public class Partie implements Serializable {
       this.score_actuel = 0;
     }
   }
-   
-
-
-
 
   public void Maj_indice(int nb_ajout) {
     if (this.indice_actuel + nb_ajout < 0) {
@@ -58,7 +53,7 @@ public class Partie implements Serializable {
   }
 
   public void Lancer_des() {
-    Maj_indice((int) (Math.random() * 12));
+    Maj_indice(2 + (int) (Math.random() * 11));
   }
 
   public void afficher_details_partie() {

@@ -16,7 +16,7 @@
    <children>
       <ImageView fitHeight="400.0" fitWidth="596.0" pickOnBounds="true" smooth="false">
          <image>
-            <Image url="@bgi.png" />
+            <Image url="@/assets/bgi.png" />
          </image>
       </ImageView>
       <VBox alignment="TOP_CENTER" layoutX="159.0" layoutY="42.0" prefHeight="322.0" prefWidth="282.0">
