@@ -10,4 +10,9 @@ public class CaseFin extends Case {
     return this.couleur;
   }
 
+  @Override
+  public void ActionCase(Partie partie) {
+    System.out.println("Case Fin");
+  }
+
 }

@@ -22,8 +22,11 @@ public class InfoController {
         for (Node node : plateau.getChildren()) {
             int indice = Integer.parseInt(((Button) node).getText());
             node.setStyle("-fx-background-color:" + joueur.partie.getPlateau().getTab_cases()[indice].getCouleur());
-            node.setOnMouseEntered(event -> {
-                System.out.println(joueur.partie.getPlateau().getTab_cases()[indice].getClass());
+            node.setOnMouseClicked(event -> {
+                joueur.partie.getPlateau().getTab_cases()[indice].ActionCase(joueur.partie);
+                String info_joueur = joueur.getNom_joueur() + "\n" + joueur.getMeilleur_score_personnel() + "\n"
+                        + joueur.partie.getIndice_actuel() + "\n" + joueur.partie.getScore_actuel();
+                infos.setText(info_joueur);
             });
         }
     }
