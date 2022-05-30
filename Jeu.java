@@ -19,6 +19,7 @@ public class Jeu implements Serializable {
     } catch (IOException e) {
       e.printStackTrace();
     } catch (ClassNotFoundException e) {
+      // TODO Auto-generated catch block
       e.printStackTrace();
     }
 
@@ -45,6 +46,7 @@ public class Jeu implements Serializable {
     gettabjoueur();
     joueur1 = this.joueurs.get(username);
     if (joueur1 == null) {
+      System.out.println("new gamer");
       joueur1 = new Joueur(username);
       joueurs.put(username, joueur1);
       settabjoueur();
@@ -75,4 +77,5 @@ public class Jeu implements Serializable {
     }
 
   }
+
 }

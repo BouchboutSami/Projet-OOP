@@ -1,5 +1,4 @@
 
-
 public class CaseBonus extends Case {
   private String couleur = "Vert";
 

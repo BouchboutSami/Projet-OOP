@@ -4,6 +4,7 @@ import java.util.*;
 
 public class Joueur implements Serializable {
   private String nom_joueur;
+  private boolean terminé;
   private int Meilleur_score_personnel;
   public Partie partie;
 
@@ -11,7 +12,10 @@ public class Joueur implements Serializable {
     this.nom_joueur = nom_joueur;
     this.partie = new Partie();
     this.Meilleur_score_personnel = 0;
+    setTerminé(false);
   }
+
+  
 
   // public Joueur(String nom_joueur) throws IOException {
   // FileReader file = new FileReader("./Joueurs.txt");
@@ -56,6 +60,18 @@ public class Joueur implements Serializable {
   // file.close();
   // }
 
+  public boolean isTerminé() {
+    return terminé;
+  }
+
+
+
+  public void setTerminé(boolean terminé) {
+    this.terminé = terminé;
+  }
+
+
+
   public void Afficher_infos() {
     System.out.println("------------------------------------------");
     System.out.println("Pseudo : " + this.nom_joueur);
@@ -70,6 +86,18 @@ public class Joueur implements Serializable {
   }
 
   public void Maj_infos_joueur() {
+  }
+
+
+
+  public int getMeilleur_score_personnel() {
+    return Meilleur_score_personnel;
+  }
+
+
+
+  public void setMeilleur_score_personnel(int meilleur_score_personnel) {
+    Meilleur_score_personnel = meilleur_score_personnel;
   }
 
 }
