@@ -1,7 +1,6 @@
 
-
 public class CaseMalus extends Case {
-  private String couleur = "Rouge";
+  private String couleur = "red";
 
   @Override
   public String getCouleur() {

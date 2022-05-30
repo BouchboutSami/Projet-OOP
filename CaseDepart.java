@@ -1,9 +1,8 @@
 
-
 import java.io.Serializable;
 
 public class CaseDepart extends Case implements Serializable {
-  private String couleur = "Jaune";
+  private String couleur = "yellow";
 
   public CaseDepart() {
   }

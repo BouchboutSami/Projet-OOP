@@ -1,7 +1,6 @@
 
-
 public class CaseDefinition extends CaseQuestion {
-  private String couleur = "bleu";
+  private String couleur = "blue";
 
   @Override
   public String getCouleur() {

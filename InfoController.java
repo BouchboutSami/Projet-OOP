@@ -15,13 +15,17 @@ public class InfoController {
         String info_joueur = joueur.getNom_joueur() + "\n" + joueur.getMeilleur_score_personnel() + "\n"
                 + joueur.partie.getIndice_actuel() + "\n" + joueur.partie.getScore_actuel();
         infos.setText(info_joueur);
-        this.setPlateau();
+        this.setPlateau(joueur);
     }
 
-    public void setPlateau() {
+    public void setPlateau(Joueur joueur) {
         for (Node node : plateau.getChildren()) {
-            String text = ((Button) node).getText();
-            node.setStyle("-fx-background-color: #ff0000; ");
+            int indice = Integer.parseInt(((Button) node).getText());
+            node.setStyle("-fx-background-color:" + joueur.partie.getPlateau().getTab_cases()[indice].getCouleur());
+            node.setOnMouseEntered(event -> {
+                System.out.println(joueur.partie.getPlateau().getTab_cases()[indice].getClass());
+            });
         }
     }
+
 }

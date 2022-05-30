@@ -1,7 +1,6 @@
 
-
 public class CaseImage extends CaseQuestion {
-  private String couleur = "Rose";
+  private String couleur = "#e322dd";
 
   @Override
   public String getCouleur() {
