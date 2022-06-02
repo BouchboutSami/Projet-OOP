@@ -5,7 +5,13 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Labeled;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.layout.Border;
+import javafx.scene.layout.BorderStroke;
+import javafx.scene.layout.BorderStrokeStyle;
+import javafx.scene.layout.BorderWidths;
+import javafx.scene.layout.CornerRadii;
 import javafx.scene.layout.GridPane;
+import javafx.scene.paint.Color;
 import javafx.scene.text.Text;
 
 public class InfoController {
@@ -36,23 +42,10 @@ public class InfoController {
     public void setPlateau(Joueur joueur) {
         for (Node node : plateau.getChildren()) {
             int indice = Integer.parseInt(((Button) node).getText());
-            node.setStyle("-fx-background-color:" + joueur.partie.getPlateau().getTab_cases()[indice].getCouleur()
-                    + ";-fx-content-display: center;");
-            node.setOnMouseClicked(event -> {
-                for (Node j : plateau.getChildren()) {
-                    if (j.equals(node)) {
-                        Image image = new Image(getClass().getResource("./assets/RedCircle.png").toExternalForm());
-                        ImageView icon = new ImageView(image);
-                        ((Button) node).setGraphic(icon);
-                    } else {
-                        Image image = new Image(getClass().getResource("./assets/RedCircle.png").toExternalForm());
-                        ImageView icon = new ImageView(image);
-                        icon.setVisible(false);
-                        ((Button) j).setGraphic(icon);
-
-                    }
-                }
-            });
+            String style = node.getStyle();
+            style += "-fx-background-color:" + joueur.partie.getPlateau().getTab_cases()[indice].getCouleur()
+                    + ";-fx-content-display: center;";
+            node.setStyle(style);
         }
     }
 
@@ -67,15 +60,55 @@ public class InfoController {
     }
 
     public void deroulement_jeu(Joueur joueur) {
-        // while (joueur.partie.getIndice_actuel() < 99) {
-        // Button Btn = Recherche(joueur.partie.getIndice_actuel());
-        // Btn.setStyle("-fx-background-color:" +
-        // joueur.partie.getPlateau().getTab_cases()[joueur.partie
-        // .getIndice_actuel()].getCouleur()
-        // + ";-fx-border-color:black" +
-        // ";-fx-border-width: 5");
-        // joueur.partie.getPlateau().getTab_cases()[joueur.partie.getIndice_actuel()].ActionCase(joueur.partie);
-        // }
+
+        for (int i = 0; i < 10000; i++) {
+            System.out.println(i);
+            Button btn = Recherche(joueur.partie.getIndice_actuel());
+            btn.setBorder(new Border(new BorderStroke(Color.BLACK,
+                    BorderStrokeStyle.SOLID, CornerRadii.EMPTY, BorderWidths.DEFAULT)));
+            btn.setOnMouseClicked(event -> {
+                joueur.partie.getPlateau().getTab_cases()[joueur.partie.getIndice_actuel()].ActionCase(joueur.partie);
+                Dessiner_perso(btn);
+                String info_joueur = joueur.getNom_joueur() + "\n" + joueur.getMeilleur_score_personnel() + "\n"
+                        + joueur.partie.getIndice_actuel() + "\n" + joueur.partie.getScore_actuel();
+                infos.setText(info_joueur);
+                btn.setOnMouseClicked(null);
+            });
+            if (joueur.partie.getIndice_actuel() == 99) {
+                break;
+            }
+        }
     }
+    // while (joueur.partie.getIndice_actuel() < 99) {
+    // Button Btn = Recherche(joueur.partie.getIndice_actuel());
+    // Btn.setStyle("-fx-background-color:" +
+    // joueur.partie.getPlateau().getTab_cases()[joueur.partie
+    // .getIndice_actuel()].getCouleur()
+    // + ";-fx-border-color:black" +
+    // ";-fx-border-width: 5");
+    // joueur.partie.getPlateau().getTab_cases()[joueur.partie.getIndice_actuel()].ActionCase(joueur.partie);
+    // }
+
+    public void LancerDes(Button button) {
+        button.setOnAction(event -> {
+            int chiffreUn = 1 + ((int) (Math.random() * 6));
+            int chiffreDeux = 1 + ((int) (Math.random() * 6));
+            String LinkOne = "assets/Dice" + Integer.toString(chiffreUn) + ".png";
+            String LinkTwo = "assets/Dice" + Integer.toString(chiffreDeux) + ".png";
+            diceOne.getStyleClass().clear();
+            DiceTwo.getStyleClass().clear();
+            diceOne.getStyleClass().add(Integer.toString(chiffreUn));
+            DiceTwo.getStyleClass().add(Integer.toString(chiffreDeux));
+            diceOne.setImage(new Image(LinkOne));
+            DiceTwo.setImage(new Image(LinkTwo));
+        });
+
+    }
+
+    public void Dessiner_perso(Button button) {
+        Image image = new Image(getClass().getResource("./assets/RedCircle.png").toExternalForm());
+        ImageView icon = new ImageView(image);
+        button.setGraphic(icon);
+    };
 
 }

@@ -150,10 +150,10 @@
                   <Button defaultButton="true" mnemonicParsing="false" prefHeight="428.0" prefWidth="493.0" text="96" textFill="TRANSPARENT" GridPane.columnIndex="7" GridPane.rowIndex="9" />
                   <Button defaultButton="true" mnemonicParsing="false" prefHeight="428.0" prefWidth="493.0" style="-fx-background-radius: 0 0 20 0;" text="98" textFill="TRANSPARENT" GridPane.columnIndex="8" GridPane.rowIndex="9" />
                   <Button defaultButton="true" mnemonicParsing="false" prefHeight="428.0" prefWidth="493.0" style="-fx-background-radius: 20 0 0 0;" text="12" textFill="TRANSPARENT" />
-                  <Button defaultButton="true" mnemonicParsing="false" prefHeight="428.0" prefWidth="493.0" style="-fx-background-radius: 50 50 0 0;" text="99" textFill="TRANSPARENT" GridPane.columnIndex="8" GridPane.rowIndex="8" />
+                  <Button defaultButton="true" minWidth="-Infinity" mnemonicParsing="false" prefHeight="126.0" prefWidth="59.0" style="-fx-background-radius: 50 50 0 0;" text="99" textFill="TRANSPARENT" GridPane.columnIndex="8" GridPane.rowIndex="8" />
                </children>
             </GridPane>
-            <VBox alignment="CENTER" prefHeight="702.0" prefWidth="281.0" spacing="75.0" style="-fx-background-color: blue;" styleClass="hh">
+            <VBox alignment="CENTER" prefHeight="702.0" prefWidth="281.0" spacing="75.0" style="-fx-background-color: blue;">
                <children>
                   <Text fx:id="infos" strokeType="INSIDE" strokeWidth="0.0" text="Text" textAlignment="CENTER">
                      <VBox.margin>
@@ -164,12 +164,12 @@
                      <children>
                         <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="20.0">
                            <children>
-                              <ImageView fx:id="diceOne" fitHeight="100.0" fitWidth="100.0" pickOnBounds="true">
+                              <ImageView fx:id="diceOne" fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" styleClass="diceone">
                                  <image>
                                     <Image url="@assets/Dice1.png" />
                                  </image>
                               </ImageView>
-                              <ImageView fx:id="DiceTwo" fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
+                              <ImageView fx:id="DiceTwo" fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true" styleClass="dicetwo">
                                  <image>
                                     <Image url="@assets/Dice6.png" />
                                  </image>
