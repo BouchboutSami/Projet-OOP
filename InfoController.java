@@ -37,7 +37,12 @@ public class InfoController extends Thread {
                 + joueur.partie.getIndice_actuel() + "\n" + joueur.partie.getScore_actuel();
         infos.setText(info_joueur);
         this.setPlateau(joueur);
-        this.deroulement_jeu(joueur);
+        try {
+            this.deroulement_jeu(joueur);
+        } catch (Exception e) {
+
+        }
+
     }
 
     public void setPlateau(Joueur joueur) {
@@ -61,37 +66,35 @@ public class InfoController extends Thread {
     }
 
     public void deroulement_jeu(Joueur joueur) {
-
-        plateau.setOnMouseClicked(event -> {
-            Button btn = Recherche(joueur.partie.getIndice_actuel());
-            btn.setBorder(new Border(new BorderStroke(Color.BLACK,
-                    BorderStrokeStyle.SOLID, CornerRadii.EMPTY, BorderWidths.DEFAULT)));
-            btn.setOnMouseClicked(e -> {
-                Dessiner_perso(btn);
-                joueur.partie.getPlateau().getTab_cases()[joueur.partie.getIndice_actuel()].ActionCase(joueur.partie);
-                String info_joueur = joueur.getNom_joueur() + "\n" +
-                        joueur.getMeilleur_score_personnel() + "\n"
-                        + joueur.partie.getIndice_actuel() + "\n" + joueur.partie.getScore_actuel();
-                infos.setText(info_joueur);
-                btn.setOnMouseClicked(null);
-                for (Node node : plateau.getChildren()) {
-                    if (node != btn) {
-                        ((Button) node).setGraphic(null);
-                        ((Button) node).setBorder(null);
+        Button btn = Recherche(joueur.partie.getIndice_actuel());
+        btn.setBorder(new Border(new BorderStroke(Color.BLACK,
+                BorderStrokeStyle.SOLID, CornerRadii.EMPTY, BorderWidths.DEFAULT)));
+        for (Node node : plateau.getChildren()) {
+            node.setOnMouseClicked(event -> {
+                if (((Button) node).getText().equals("" + joueur.partie.getIndice_actuel())) {
+                    Dessiner_perso(((Button) node));
+                    joueur.partie.getPlateau().getTab_cases()[joueur.partie.getIndice_actuel()]
+                            .ActionCase(joueur.partie);
+                    String info_joueur = joueur.getNom_joueur() + "\n" +
+                            joueur.getMeilleur_score_personnel() + "\n"
+                            + joueur.partie.getIndice_actuel() + "\n" + joueur.partie.getScore_actuel();
+                    infos.setText(info_joueur);
+                    btn.setOnMouseClicked(null);
+                    for (Node node2 : plateau.getChildren()) {
+                        if (node2 != node) {
+                            ((Button) node2).setGraphic(null);
+                            ((Button) node2).setBorder(null);
+                        }
                     }
+                } else {
+                    System.out.println("case ghalta");
                 }
+                Button btnNext = Recherche(joueur.partie.getIndice_actuel());
+                btnNext.setBorder(new Border(new BorderStroke(Color.BLACK,
+                        BorderStrokeStyle.SOLID, CornerRadii.EMPTY, BorderWidths.DEFAULT)));
             });
-        });
+        }
     }
-    // while (joueur.partie.getIndice_actuel() < 99) {
-    // Button Btn = Recherche(joueur.partie.getIndice_actuel());
-    // Btn.setStyle("-fx-background-color:" +
-    // joueur.partie.getPlateau().getTab_cases()[joueur.partie
-    // .getIndice_actuel()].getCouleur()
-    // + ";-fx-border-color:black" +
-    // ";-fx-border-width: 5");
-    // joueur.partie.getPlateau().getTab_cases()[joueur.partie.getIndice_actuel()].ActionCase(joueur.partie);
-    // }
 
     public void LancerDes(Button button) {
         button.setOnAction(event -> {
