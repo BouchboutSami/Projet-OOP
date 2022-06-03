@@ -1,8 +1,7 @@
-import javafx.event.ActionEvent;
+
 import javafx.fxml.FXML;
 import javafx.scene.Node;
 import javafx.scene.control.Button;
-import javafx.scene.control.Labeled;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.Border;
@@ -14,7 +13,9 @@ import javafx.scene.layout.GridPane;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Text;
 
-public class InfoController {
+public class InfoController extends Thread {
+
+    Thread gameThread;
 
     @FXML
     private ImageView DiceTwo;
@@ -61,23 +62,26 @@ public class InfoController {
 
     public void deroulement_jeu(Joueur joueur) {
 
-        for (int i = 0; i < 10000; i++) {
-            System.out.println(i);
+        plateau.setOnMouseClicked(event -> {
             Button btn = Recherche(joueur.partie.getIndice_actuel());
             btn.setBorder(new Border(new BorderStroke(Color.BLACK,
                     BorderStrokeStyle.SOLID, CornerRadii.EMPTY, BorderWidths.DEFAULT)));
-            btn.setOnMouseClicked(event -> {
-                joueur.partie.getPlateau().getTab_cases()[joueur.partie.getIndice_actuel()].ActionCase(joueur.partie);
+            btn.setOnMouseClicked(e -> {
                 Dessiner_perso(btn);
-                String info_joueur = joueur.getNom_joueur() + "\n" + joueur.getMeilleur_score_personnel() + "\n"
+                joueur.partie.getPlateau().getTab_cases()[joueur.partie.getIndice_actuel()].ActionCase(joueur.partie);
+                String info_joueur = joueur.getNom_joueur() + "\n" +
+                        joueur.getMeilleur_score_personnel() + "\n"
                         + joueur.partie.getIndice_actuel() + "\n" + joueur.partie.getScore_actuel();
                 infos.setText(info_joueur);
                 btn.setOnMouseClicked(null);
+                for (Node node : plateau.getChildren()) {
+                    if (node != btn) {
+                        ((Button) node).setGraphic(null);
+                        ((Button) node).setBorder(null);
+                    }
+                }
             });
-            if (joueur.partie.getIndice_actuel() == 99) {
-                break;
-            }
-        }
+        });
     }
     // while (joueur.partie.getIndice_actuel() < 99) {
     // Button Btn = Recherche(joueur.partie.getIndice_actuel());
@@ -109,6 +113,6 @@ public class InfoController {
         Image image = new Image(getClass().getResource("./assets/RedCircle.png").toExternalForm());
         ImageView icon = new ImageView(image);
         button.setGraphic(icon);
-    };
+    }
 
 }

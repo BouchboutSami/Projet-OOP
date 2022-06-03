@@ -9,7 +9,7 @@ public class CaseImage extends CaseQuestion {
 
   @Override
   public void ActionCase(Partie partie) {
-    // TODO Auto-generated method stub
     System.out.println("Case Image Action Case");
+    partie.Maj_indice(3);
   }
 }
