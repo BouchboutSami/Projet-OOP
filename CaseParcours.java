@@ -1,3 +1,6 @@
+import java.io.IOException;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.control.Button;
 
 public class CaseParcours extends Case {
   private String couleur = "grey";
@@ -9,8 +12,6 @@ public class CaseParcours extends Case {
 
   @Override
   public void ActionCase(Partie partie) {
-    System.out.println("Case Parcours");
-    partie.Lancer_des();
+    System.out.println("hello");
   }
-
 }

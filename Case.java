@@ -1,16 +1,13 @@
-
-
 import java.io.Serializable;
 
-public abstract class Case implements Cloneable, Serializable  {
+public abstract class Case implements Cloneable, Serializable {
   private String couleur = "a";
-   
+
   @Override
   protected Object clone()
-      throws CloneNotSupportedException
-  {
-      // Super() keyword refers to parent class
-      return super.clone();
+      throws CloneNotSupportedException {
+    // Super() keyword refers to parent class
+    return super.clone();
   }
 
   /**
