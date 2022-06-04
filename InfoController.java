@@ -78,6 +78,7 @@ public class InfoController {
                     String info_joueur = joueur.getNom_joueur() + "\n" +
                             joueur.getMeilleur_score_personnel() + "\n"
                             + joueur.partie.getIndice_actuel() + "\n" + joueur.partie.getScore_actuel();
+                    System.out.println(info_joueur);        
                     infos.setText(info_joueur);
                     btn.setOnMouseClicked(null);
                     for (Node node2 : plateau.getChildren()) {
