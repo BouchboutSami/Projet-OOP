@@ -13,7 +13,7 @@ import javafx.scene.layout.GridPane;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Text;
 
-public class InfoController extends Thread {
+public class InfoController {
 
     Thread gameThread;
 
@@ -87,6 +87,7 @@ public class InfoController extends Thread {
                         }
                     }
                 } else {
+                    // Exception
                     System.out.println("case ghalta");
                 }
                 Button btnNext = Recherche(joueur.partie.getIndice_actuel());
