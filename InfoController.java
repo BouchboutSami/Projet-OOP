@@ -84,10 +84,6 @@ public class InfoController {
                             int chiffreDeux = 1 + ((int) (Math.random() * 6));
                             String LinkOne = "assets/Dice" + Integer.toString(chiffreUn) + ".png";
                             String LinkTwo = "assets/Dice" + Integer.toString(chiffreDeux) + ".png";
-                            diceOne.getStyleClass().clear();
-                            DiceTwo.getStyleClass().clear();
-                            diceOne.getStyleClass().add(Integer.toString(chiffreUn));
-                            DiceTwo.getStyleClass().add(Integer.toString(chiffreDeux));
                             diceOne.setImage(new Image(LinkOne));
                             DiceTwo.setImage(new Image(LinkTwo));
                             joueur.partie.Maj_indice(chiffreUn + chiffreDeux);

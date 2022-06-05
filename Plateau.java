@@ -1,12 +1,11 @@
 
-
 import java.io.Serializable;
 
 /**
  * Plateau
  */
 
-public class Plateau implements Serializable   {
+public class Plateau implements Serializable {
   private final int nb_cases = 100;
   private Case[] tab_cases = new Case[nb_cases];
 

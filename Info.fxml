@@ -147,10 +147,11 @@
                   <Button defaultButton="true" mnemonicParsing="false" prefHeight="428.0" prefWidth="493.0" style="-fx-background-radius: 0 0 0 20;" text="93" textFill="TRANSPARENT" GridPane.columnIndex="4" GridPane.rowIndex="9" />
                   <Button defaultButton="true" mnemonicParsing="false" prefHeight="428.0" prefWidth="493.0" text="94" textFill="TRANSPARENT" GridPane.columnIndex="5" GridPane.rowIndex="9" />
                   <Button defaultButton="true" mnemonicParsing="false" prefHeight="428.0" prefWidth="493.0" text="95" textFill="TRANSPARENT" GridPane.columnIndex="6" GridPane.rowIndex="9" />
-                  <Button defaultButton="true" mnemonicParsing="false" prefHeight="428.0" prefWidth="493.0" text="96" textFill="TRANSPARENT" GridPane.columnIndex="7" GridPane.rowIndex="9" />
-                  <Button defaultButton="true" mnemonicParsing="false" prefHeight="428.0" prefWidth="493.0" style="-fx-background-radius: 0 0 20 0;" text="98" textFill="TRANSPARENT" GridPane.columnIndex="8" GridPane.rowIndex="9" />
+                  <Button defaultButton="true" mnemonicParsing="false" prefHeight="428.0" prefWidth="493.0" text="97" textFill="TRANSPARENT" GridPane.columnIndex="7" GridPane.rowIndex="8" />
+                  <Button defaultButton="true" mnemonicParsing="false" prefHeight="428.0" prefWidth="493.0" style="-fx-background-radius: 0 0 20 0;" text="96" textFill="TRANSPARENT" GridPane.columnIndex="7" GridPane.rowIndex="9" />
                   <Button defaultButton="true" mnemonicParsing="false" prefHeight="428.0" prefWidth="493.0" style="-fx-background-radius: 20 0 0 0;" text="12" textFill="TRANSPARENT" />
-                  <Button defaultButton="true" minWidth="-Infinity" mnemonicParsing="false" prefHeight="126.0" prefWidth="59.0" style="-fx-background-radius: 50 50 0 0;" text="99" textFill="TRANSPARENT" GridPane.columnIndex="8" GridPane.rowIndex="8" />
+                  <Button defaultButton="true" minWidth="-Infinity" mnemonicParsing="false" prefHeight="126.0" prefWidth="59.0" text="98" textFill="TRANSPARENT" GridPane.columnIndex="7" GridPane.rowIndex="7" />
+                  <Button defaultButton="true" layoutX="551.0" layoutY="444.0" minWidth="-Infinity" mnemonicParsing="false" prefHeight="126.0" prefWidth="59.0" style="-fx-background-radius: 50 50 0 0;" text="99" textFill="TRANSPARENT" GridPane.columnIndex="7" GridPane.rowIndex="6" />
                </children>
             </GridPane>
             <VBox alignment="CENTER" prefHeight="702.0" prefWidth="281.0" spacing="75.0" style="-fx-background-color: blue;">
