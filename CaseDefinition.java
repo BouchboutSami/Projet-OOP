@@ -10,6 +10,6 @@ public class CaseDefinition extends CaseQuestion {
   @Override
   public void ActionCase(Partie partie) {
     System.out.println("Case Definition Action Case");
-    partie.Maj_indice(4);
+    partie.Maj_indice(1);
   }
 }

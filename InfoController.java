@@ -15,16 +15,14 @@ import javafx.scene.text.Text;
 
 public class InfoController {
 
-    Thread gameThread;
-
     @FXML
-    private ImageView DiceTwo;
+    public ImageView DiceTwo;
 
     @FXML
     private Button LancerDe;
 
     @FXML
-    private ImageView diceOne;
+    public ImageView diceOne;
 
     @FXML
     private Text infos;
@@ -73,13 +71,38 @@ public class InfoController {
             node.setOnMouseClicked(event -> {
                 if (((Button) node).getText().equals("" + joueur.partie.getIndice_actuel())) {
                     Dessiner_perso(((Button) node));
-                    joueur.partie.getPlateau().getTab_cases()[joueur.partie.getIndice_actuel()]
-                            .ActionCase(joueur.partie);
                     String info_joueur = joueur.getNom_joueur() + "\n" +
                             joueur.getMeilleur_score_personnel() + "\n"
                             + joueur.partie.getIndice_actuel() + "\n" + joueur.partie.getScore_actuel();
                     System.out.println(info_joueur);        
                     infos.setText(info_joueur);
+                    if (joueur.partie.getPlateau().getTab_cases()[joueur.partie.getIndice_actuel()]
+                            .getCouleur().equals("grey")) {
+                        LancerDe.setOnMouseClicked(e -> {
+                            int chiffreUn = 1 + ((int) (Math.random() * 6));
+                            int chiffreDeux = 1 + ((int) (Math.random() * 6));
+                            String LinkOne = "assets/Dice" + Integer.toString(chiffreUn) + ".png";
+                            String LinkTwo = "assets/Dice" + Integer.toString(chiffreDeux) + ".png";
+                            diceOne.getStyleClass().clear();
+                            DiceTwo.getStyleClass().clear();
+                            diceOne.getStyleClass().add(Integer.toString(chiffreUn));
+                            DiceTwo.getStyleClass().add(Integer.toString(chiffreDeux));
+                            diceOne.setImage(new Image(LinkOne));
+                            DiceTwo.setImage(new Image(LinkTwo));
+                            joueur.partie.Maj_indice(chiffreUn + chiffreDeux);
+                            System.out.println(joueur.partie.getIndice_actuel());
+                            Button btnNext = Recherche(joueur.partie.getIndice_actuel());
+                            btnNext.setBorder(new Border(new BorderStroke(Color.BLACK,
+                                    BorderStrokeStyle.SOLID, CornerRadii.EMPTY, BorderWidths.DEFAULT)));
+                            ((Button) node).setBorder(null);
+                            LancerDe.setOnMouseClicked(null);
+                        });
+
+                    } else {
+                        joueur.partie.getPlateau().getTab_cases()[joueur.partie.getIndice_actuel()]
+                                .ActionCase(joueur.partie);
+                    }
+
                     btn.setOnMouseClicked(null);
                     for (Node node2 : plateau.getChildren()) {
                         if (node2 != node) {
@@ -98,26 +121,17 @@ public class InfoController {
         }
     }
 
-    public void LancerDes(Button button) {
-        button.setOnAction(event -> {
-            int chiffreUn = 1 + ((int) (Math.random() * 6));
-            int chiffreDeux = 1 + ((int) (Math.random() * 6));
-            String LinkOne = "assets/Dice" + Integer.toString(chiffreUn) + ".png";
-            String LinkTwo = "assets/Dice" + Integer.toString(chiffreDeux) + ".png";
-            diceOne.getStyleClass().clear();
-            DiceTwo.getStyleClass().clear();
-            diceOne.getStyleClass().add(Integer.toString(chiffreUn));
-            DiceTwo.getStyleClass().add(Integer.toString(chiffreDeux));
-            diceOne.setImage(new Image(LinkOne));
-            DiceTwo.setImage(new Image(LinkTwo));
-        });
-
-    }
-
     public void Dessiner_perso(Button button) {
         Image image = new Image(getClass().getResource("./assets/RedCircle.png").toExternalForm());
         ImageView icon = new ImageView(image);
         button.setGraphic(icon);
+    }
+
+    /**
+     * @return the lancerDe
+     */
+    public Button getLancerDe() {
+        return LancerDe;
     }
 
 }
