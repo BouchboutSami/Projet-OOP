@@ -13,7 +13,7 @@ public class test extends Application {
         try {
             root = FXMLLoader.load(getClass().getResource("LoginPage.fxml"));
             Scene scene = new Scene(root);
-            primaryStage.setTitle("Hello Whhorld!");
+            primaryStage.setTitle("Learn'nRoll");
             primaryStage.setScene(scene);
             primaryStage.show();
             primaryStage.setResizable(false);
