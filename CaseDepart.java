@@ -14,7 +14,7 @@ public class CaseDepart extends Case implements Serializable {
 
   @Override
   public void ActionCase(Partie partie) {
-    partie.Lancer_des();
+    partie.Maj_indice(1);
   }
 
 }
