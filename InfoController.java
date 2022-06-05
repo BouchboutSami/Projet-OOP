@@ -16,13 +16,13 @@ import javafx.scene.text.Text;
 public class InfoController {
 
     @FXML
-    public ImageView DiceTwo;
+    private ImageView DiceTwo;
 
     @FXML
     private Button LancerDe;
 
     @FXML
-    public ImageView diceOne;
+    private ImageView diceOne;
 
     @FXML
     private Text infos;

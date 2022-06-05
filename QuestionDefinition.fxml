@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="551.0" prefWidth="622.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <VBox alignment="CENTER" layoutX="164.0" layoutY="59.0" prefHeight="200.0" prefWidth="100.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Find the corresponding word">
+               <VBox.margin>
+                  <Insets bottom="100.0" />
+               </VBox.margin>
+               <font>
+                  <Font name="Franklin Gothic Medium" size="26.0" />
+               </font>
+            </Text>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Definition A">
+               <VBox.margin>
+                  <Insets bottom="75.0" />
+               </VBox.margin>
+            </Text>
+            <HBox alignment="CENTER" prefHeight="50.0" prefWidth="622.0" spacing="10.0">
+               <children>
+                  <TextField prefHeight="50.0" prefWidth="50.0" />
+                  <TextField layoutX="10.0" layoutY="10.0" prefHeight="50.0" prefWidth="50.0" />
+                  <TextField layoutX="60.0" layoutY="10.0" prefHeight="50.0" prefWidth="50.0" />
+                  <TextField layoutX="111.0" layoutY="10.0" prefHeight="50.0" prefWidth="50.0" />
+                  <TextField layoutX="161.0" layoutY="10.0" prefHeight="50.0" prefWidth="50.0" />
+                  <TextField layoutX="212.0" layoutY="10.0" prefHeight="50.0" prefWidth="50.0" />
+                  <TextField layoutX="262.0" layoutY="10.0" prefHeight="50.0" prefWidth="50.0" />
+                  <TextField layoutX="312.0" layoutY="10.0" prefHeight="50.0" prefWidth="50.0" />
+                  <TextField layoutX="363.0" layoutY="10.0" prefHeight="50.0" prefWidth="50.0" />
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>
