@@ -43,11 +43,14 @@ public class QuestionDefinitionController {
                 "a place set apart to contain books, periodicals, and other material for reading", "library");
         QuestionDefinition q6 = new QuestionDefinition(
                 "a device that combines a cell phone with a handheld computer, typically offering internet access",
-                "Smartphone");
+                "Phone");
         QuestionDefinition q7 = new QuestionDefinition(
                 "a basic social unit consisting of parents and their children",
                 "Family");
-        Collections.addAll(tabqst, q0, q1, q2, q3, q4, q5, q6, q7);
+        QuestionDefinition q8 = new QuestionDefinition("the main meal of the day, eaten in the evening", "Dinner");
+        QuestionDefinition q9 = new QuestionDefinition(
+                "instrument for writing or drawing with ink or a similar substance.", "Pen");
+        Collections.addAll(tabqst, q0, q1, q2, q3, q4, q5, q6, q7, q8, q9);
         int rand = (int) (Math.random() * tabqst.size());
         String question = tabqst.get(rand).getDefinition();
         String reponse = tabqst.get(rand).getReponse().toLowerCase();
@@ -55,8 +58,8 @@ public class QuestionDefinitionController {
         for (int i = 0; i < reponse.length(); i++) {
             TextField textField = new TextField();
             textField.setId(Integer.toString(i));
-            textField.setPrefHeight(50);
-            textField.setPrefWidth(50);
+            textField.setPrefHeight(40);
+            textField.setPrefWidth(40);
             textField.setStyle("-fx-font-size: 20");
             textField.setAlignment(Pos.CENTER);
             textField.setTextFormatter(new TextFormatter<String>((Change change) -> {
@@ -74,7 +77,7 @@ public class QuestionDefinitionController {
             for (Node node : input.getChildren()) {
                 rep += ((TextField) node).getText();
                 submit.setId(rep);
-                if (submit.getId().equals(reponse)) {
+                if (submit.getId().toLowerCase().equals(reponse)) {
                     partie.AjouterScore(10);
                 } else {
                     partie.AjouterScore(-10);

@@ -1,11 +1,7 @@
 import java.io.File;
 import java.util.ArrayList;
 import java.util.Collections;
-
-import javafx.event.ActionEvent;
-import javafx.event.Event;
 import javafx.fxml.FXML;
-import javafx.print.Collation;
 import javafx.scene.Node;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -26,19 +22,17 @@ public class CaseImageController {
         File files[] = folder.listFiles();
         int iterateur = 0;
         int i = (int) (Math.random() * 4);
+        ArrayList<Integer> random = new ArrayList<Integer>();
+        for (int k = 0; k < files.length; k++) {
+            random.add(k);
+        }
+        Collections.shuffle(random);
         for (Node node : grid.getChildren()) {
-            ArrayList<Integer> random = new ArrayList<Integer>();
-            for (int k = 0; k < files.length; k++) {
-                random.add(k);
-            }
-            Collections.shuffle(random);
             int j = random.get(iterateur);
-
             ((ImageView) node).setImage(
                     new Image("./imagesQuestions/" + files[j].getName()));
             ((ImageView) node).setId(files[j].getName().replace(".jpg", ""));
             if (iterateur == i) {
-                System.out.println(files[j].getName().replace(".jpg", ""));
                 answer.setText(files[j].getName().replace(".jpg", ""));
             }
             ((ImageView) node).setOnMouseClicked(event -> {

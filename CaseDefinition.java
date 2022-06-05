@@ -32,8 +32,5 @@ public class CaseDefinition extends CaseQuestion {
     } catch (IOException e) {
       e.printStackTrace();
     }
-
-    System.out.println("Case Definition Action Case");
-    partie.Maj_indice(1);
   }
 }
