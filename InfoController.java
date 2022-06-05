@@ -74,6 +74,7 @@ public class InfoController {
                     String info_joueur = joueur.getNom_joueur() + "\n" +
                             joueur.getMeilleur_score_personnel() + "\n"
                             + joueur.partie.getIndice_actuel() + "\n" + joueur.partie.getScore_actuel();
+                    System.out.println(info_joueur);        
                     infos.setText(info_joueur);
                     if (joueur.partie.getPlateau().getTab_cases()[joueur.partie.getIndice_actuel()]
                             .getCouleur().equals("grey")) {

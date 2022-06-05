@@ -12,7 +12,7 @@ public class CaseBonus extends Case {
     System.out.println("Vous etes sur une" + this.getClass().getName()
         + " donc vous avez un bonus de 10 points et vous avancez de deux cases");
     partie.AjouterScore(10);
-    partie.Maj_indice(2);
+    partie.Maj_indice(3);
   }
 
   public void setCouleur(String couleur) {
