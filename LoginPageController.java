@@ -22,7 +22,7 @@ public class LoginPageController {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("Info.fxml"));
         root = loader.load();
         InfoController infocontroller = loader.getController();
-        infocontroller.afficher(user);
+        infocontroller.afficher(user ,game );
         stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);
