@@ -1,6 +1,16 @@
+import java.io.IOException;
+import java.util.HashMap;
+
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.stage.Modality;
+import javafx.stage.Stage;
 
 public class CaseDefinition extends CaseQuestion {
   private String couleur = "blue";
+
+  private Parent root;
 
   @Override
   public String getCouleur() {
@@ -9,7 +19,18 @@ public class CaseDefinition extends CaseQuestion {
 
   @Override
   public void ActionCase(Partie partie) {
-    System.out.println("Case Definition Action Case");
-    partie.Maj_indice(1);
+    FXMLLoader loader = new FXMLLoader(getClass().getResource("QuestionDefinition.fxml"));
+    try {
+      root = loader.load();
+      Stage secondStage = new Stage();
+      secondStage.setScene(new Scene(root, 638, 444));
+      secondStage.initModality(Modality.APPLICATION_MODAL);
+      QuestionDefinitionController questionDefinitionController = loader.getController();
+      questionDefinitionController.genqst(partie);
+      partie.Maj_indice(2);
+      secondStage.show();
+    } catch (IOException e) {
+      e.printStackTrace();
+    }
   }
 }

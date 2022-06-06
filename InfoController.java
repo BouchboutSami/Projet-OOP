@@ -16,13 +16,13 @@ import javafx.scene.text.Text;
 public class InfoController {
 
     @FXML
-    public ImageView DiceTwo;
+    private ImageView DiceTwo;
 
     @FXML
     private Button LancerDe;
 
     @FXML
-    public ImageView diceOne;
+    private ImageView diceOne;
 
     @FXML
     private Text infos;
@@ -73,21 +73,23 @@ public class InfoController {
                     Dessiner_perso(((Button) node));
                     String info_joueur = joueur.getNom_joueur() + "\n" +
                             joueur.getMeilleur_score_personnel() + "\n"
+
                             + joueur.partie.getIndice_actuel() + "\n" + joueur.partie.getScore_actuel()
                             +"\n"+game.set_meilleur_score_global();
                     System.out.println(info_joueur);        
+
+                            + joueur.partie.getIndice_actuel() + "\n" + joueur.partie.getScore_actuel();
+                    System.out.println(info_joueur);
+
                     infos.setText(info_joueur);
-                    if (joueur.partie.getPlateau().getTab_cases()[joueur.partie.getIndice_actuel()]
-                            .getCouleur().equals("grey")) {
+                    String color = joueur.partie.getPlateau().getTab_cases()[joueur.partie.getIndice_actuel()]
+                            .getCouleur();
+                    if (color.equals("grey") || color.equals("yellow")) {
                         LancerDe.setOnMouseClicked(e -> {
                             int chiffreUn = 1 + ((int) (Math.random() * 6));
                             int chiffreDeux = 1 + ((int) (Math.random() * 6));
                             String LinkOne = "assets/Dice" + Integer.toString(chiffreUn) + ".png";
                             String LinkTwo = "assets/Dice" + Integer.toString(chiffreDeux) + ".png";
-                            diceOne.getStyleClass().clear();
-                            DiceTwo.getStyleClass().clear();
-                            diceOne.getStyleClass().add(Integer.toString(chiffreUn));
-                            DiceTwo.getStyleClass().add(Integer.toString(chiffreDeux));
                             diceOne.setImage(new Image(LinkOne));
                             DiceTwo.setImage(new Image(LinkTwo));
                             joueur.partie.Maj_indice(chiffreUn + chiffreDeux);
