@@ -7,7 +7,6 @@ import javafx.stage.Stage;
 
 public class CaseImage extends CaseQuestion {
   private String couleur = "#ff9193";
-  private Parent root;
 
   public String getCouleur() {
     return this.couleur;
@@ -18,6 +17,7 @@ public class CaseImage extends CaseQuestion {
 
     FXMLLoader loader = new FXMLLoader(getClass().getResource("CaseImage.fxml"));
     try {
+      Parent root;
       root = loader.load();
       Stage secondStage = new Stage();
       secondStage.setScene(new Scene(root, 638, 444));

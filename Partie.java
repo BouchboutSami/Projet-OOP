@@ -8,7 +8,8 @@ public class Partie implements Serializable {
 
   public Partie() {
     this.plateau = new Plateau();
-
+    this.indice_actuel = 0;
+    this.score_actuel = 0;
   }
 
   public Plateau getPlateau() {

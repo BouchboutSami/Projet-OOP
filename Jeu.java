@@ -5,6 +5,7 @@ import java.util.Collection;
 
 public class Jeu implements Serializable {
   public HashMap<String, Joueur> joueurs = new HashMap<String, Joueur>();;
+  public static int meilleur_score_global;
 
   public void gettabjoueur() {
     try {
@@ -54,27 +55,19 @@ public class Jeu implements Serializable {
     return joueur1;
   }
 
-  public Joueur first_time_authenticate(String username) {
-    Joueur joueur1;
-    gettabjoueur();
-    joueur1 = this.joueurs.get(username);
-    if (joueur1 == null) {
+  public void saveEtat(Joueur joueur) {
+    joueur.Afficher_infos();
+    this.joueurs.put(joueur.getNom_joueur(), joueur);
+    settabjoueur();
+  }
 
-      joueur1 = new Joueur(username);
-      joueurs.put(username, joueur1);
-      settabjoueur();
-
-      if (joueur1 != null) {
-        System.out.println("player is created succesfuly ");
-      }
-      return joueur1;
-
-    } else {
-      authenticate(username);
-      return joueur1;
-
+  public String set_meilleur_score_global() {
+    List<Integer> intValues = new ArrayList<>();
+    for (String name : joueurs.keySet()) {
+      intValues.add(joueurs.get(name).getMeilleur_score_personnel());
     }
-
+    Jeu.meilleur_score_global = Collections.max(intValues);
+    return Integer.toString(Collections.max(intValues));
   }
 
 }

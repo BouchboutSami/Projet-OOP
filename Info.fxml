@@ -15,7 +15,7 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="757.0" prefWidth="1149.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="InfoController">
    <children>
-      <HBox layoutX="1.0" layoutY="-2.0" prefHeight="760.0" prefWidth="1149.0">
+      <HBox alignment="CENTER" layoutX="1.0" layoutY="-2.0" prefHeight="760.0" prefWidth="1149.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
             <GridPane fx:id="plateau" hgap="5.0" prefHeight="708.0" prefWidth="903.0" vgap="5.0">
               <columnConstraints>
@@ -165,7 +165,7 @@
                         <Font name="Impact" size="23.0" />
                      </font>
                   </Text>
-                  <Button layoutX="57.0" layoutY="409.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="40.0" prefWidth="170.0" style="-fx-background-color: white;" text="Save" textFill="#6747cd">
+                  <Button fx:id="restart" layoutX="57.0" layoutY="409.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="40.0" prefWidth="170.0" style="-fx-background-color: white;" text="Restart" textFill="#6747cd">
                      <font>
                         <Font name="Ebrima" size="20.0" />
                      </font>
@@ -173,7 +173,7 @@
                         <Insets bottom="25.0" />
                      </VBox.margin>
                   </Button>
-                  <Button maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="40.0" prefWidth="170.0" style="-fx-background-color: white;" text="Quitter" textFill="#6747cd">
+                  <Button fx:id="quit" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="40.0" prefWidth="170.0" style="-fx-background-color: white;" text="Quit" textFill="#6747cd">
                      <font>
                         <Font name="Ebrima" size="20.0" />
                      </font>

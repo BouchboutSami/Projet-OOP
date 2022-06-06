@@ -24,10 +24,11 @@ public class LoginPageController {
     @FXML
     void Authenticate(ActionEvent event) throws IOException {
         Joueur user = game.authenticate(userinput.getText().toLowerCase());
+        user.Afficher_infos();
         FXMLLoader loader = new FXMLLoader(getClass().getResource("Info.fxml"));
         root = loader.load();
         InfoController infocontroller = loader.getController();
-        infocontroller.afficher(user);
+        infocontroller.afficher(user, game);
         stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);

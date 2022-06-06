@@ -10,8 +10,6 @@ import javafx.stage.Stage;
 public class CaseDefinition extends CaseQuestion {
   private String couleur = "#00c3e3";
 
-  private Parent root;
-
   @Override
   public String getCouleur() {
     return this.couleur;
@@ -21,6 +19,7 @@ public class CaseDefinition extends CaseQuestion {
   public void ActionCase(Partie partie) {
     FXMLLoader loader = new FXMLLoader(getClass().getResource("QuestionDefinition.fxml"));
     try {
+      Parent root;
       root = loader.load();
       Stage secondStage = new Stage();
       secondStage.setScene(new Scene(root, 638, 444));

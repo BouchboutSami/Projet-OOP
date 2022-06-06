@@ -1,6 +1,11 @@
 
+import java.io.IOException;
+
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -12,8 +17,15 @@ import javafx.scene.layout.CornerRadii;
 import javafx.scene.layout.GridPane;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Text;
+import javafx.stage.Stage;
 
 public class InfoController {
+    private Parent root;
+    @FXML
+    private Button quit;
+
+    @FXML
+    private Button restart;
 
     @FXML
     private ImageView DiceTwo;
@@ -30,16 +42,35 @@ public class InfoController {
     @FXML
     private GridPane plateau;
 
-    public void afficher(Joueur joueur) {
-        String info_joueur = joueur.getNom_joueur() + "\n" + joueur.getMeilleur_score_personnel() + "\n"
-                + joueur.partie.getIndice_actuel() + "\n" + joueur.partie.getScore_actuel();
-        infos.setText(info_joueur);
+    public void afficher(Joueur joueur, Jeu game) {
         this.setPlateau(joueur);
-        try {
-            this.deroulement_jeu(joueur);
-        } catch (Exception e) {
-
-        }
+        this.deroulement_jeu(joueur, game);
+        quit.setOnMouseClicked(e -> {
+            game.saveEtat(joueur);
+            try {
+                root = FXMLLoader.load(getClass().getResource("LoginPage.fxml"));
+            } catch (IOException e1) {
+                e1.printStackTrace();
+            }
+            Scene scene = new Scene(root);
+            Stage primaryStage = new Stage();
+            primaryStage.setTitle("Learn'nRoll");
+            primaryStage.setScene(scene);
+            primaryStage.show();
+            Stage stage = (Stage) quit.getScene().getWindow();
+            stage.close();
+        });
+        restart.setOnMouseClicked(event -> {
+            joueur.partie = new Partie();
+            this.setPlateau(joueur);
+            Dessiner_perso(Recherche(joueur.partie.getIndice_actuel()));
+            for (Node node2 : plateau.getChildren()) {
+                if (node2 != Recherche(joueur.partie.getIndice_actuel())) {
+                    ((Button) node2).setGraphic(null);
+                    ((Button) node2).setBorder(null);
+                }
+            }
+        });
 
     }
 
@@ -51,6 +82,7 @@ public class InfoController {
                     + ";-fx-content-display: center;";
             node.setStyle(style);
         }
+
     }
 
     public Button Recherche(int indice) {
@@ -63,12 +95,12 @@ public class InfoController {
         return found;
     }
 
-    public void deroulement_jeu(Joueur joueur) {
+    public void deroulement_jeu(Joueur joueur, Jeu game) {
         String info_joueur = "\n\nUser Name: " + joueur.getNom_joueur() + "\n\n" +
                 "Personal HS: " + joueur.getMeilleur_score_personnel() + "\n\n"
                 + "Actual index: " + joueur.partie.getIndice_actuel() + "\n\n"
-                + "Actual Score: " + joueur.partie.getScore_actuel();
-        System.out.println(info_joueur);
+                + "Actual Score: " + joueur.partie.getScore_actuel() + "\n\n"
+                + "Global HS: " + game.set_meilleur_score_global();
         infos.setText(info_joueur);
         Button btn = Recherche(joueur.partie.getIndice_actuel());
         btn.setBorder(new Border(new BorderStroke(Color.BLACK,
@@ -80,7 +112,8 @@ public class InfoController {
                     String infos_joueur = "\n\nUser Name: " + joueur.getNom_joueur() + "\n\n" +
                             "Personal HS: " + joueur.getMeilleur_score_personnel() + "\n\n"
                             + "Actual index: " + joueur.partie.getIndice_actuel() + "\n\n"
-                            + "Actual Score: " + joueur.partie.getScore_actuel();
+                            + "Actual Score: " + joueur.partie.getScore_actuel() + "\n\n"
+                            + "Global HS: " + game.set_meilleur_score_global();
                     infos.setText(infos_joueur);
                     String color = joueur.partie.getPlateau().getTab_cases()[joueur.partie.getIndice_actuel()]
                             .getCouleur();
@@ -93,7 +126,6 @@ public class InfoController {
                             diceOne.setImage(new Image(LinkOne));
                             DiceTwo.setImage(new Image(LinkTwo));
                             joueur.partie.Maj_indice(chiffreUn + chiffreDeux);
-                            System.out.println(joueur.partie.getIndice_actuel());
                             Button btnNext = Recherche(joueur.partie.getIndice_actuel());
                             btnNext.setBorder(new Border(new BorderStroke(Color.BLACK,
                                     BorderStrokeStyle.SOLID, CornerRadii.EMPTY, BorderWidths.DEFAULT)));
