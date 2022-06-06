@@ -1,6 +1,7 @@
 
 import java.io.IOException;
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
@@ -113,7 +114,15 @@ public class InfoController {
                         || joueur.partie.getPlateau().getTab_cases()[Integer.parseInt(((Button) node).getText())]
                                 .getCouleur().equals("#ff9193")
                         || joueur.partie.getPlateau().getTab_cases()[Integer.parseInt(((Button) node).getText())]
-                                .getCouleur().equals("#00c3e3")) {
+                                .getCouleur().equals("#00c3e3")
+                        || joueur.partie.getPlateau().getTab_cases()[Integer.parseInt(((Button) node).getText())]
+                                .getCouleur().equals("#f70d1a")
+                        || joueur.partie.getPlateau().getTab_cases()[Integer.parseInt(((Button) node).getText())]
+                                .getCouleur().equals("#7dda32")
+                        || joueur.partie.getPlateau().getTab_cases()[Integer.parseInt(((Button) node).getText())]
+                                .getCouleur().equals("#ff7900")
+                        || joueur.partie.getPlateau().getTab_cases()[Integer.parseInt(((Button) node).getText())]
+                                .getCouleur().equals("black")) {
                     Dessiner_perso(((Button) node));
                     joueur.partie.setIndice_actuel(Integer.parseInt(((Button) node).getText()));
                     String infos_joueur = "\n\nUser Name: " + joueur.getNom_joueur() + "\n\n" +
@@ -199,6 +208,11 @@ public class InfoController {
         Image image = new Image(getClass().getResource("./assets/RedCircle.png").toExternalForm());
         ImageView icon = new ImageView(image);
         button.setGraphic(icon);
+    }
+
+    public void quitGame(ActionEvent event) {
+        Stage stg = (Stage) plateau.getScene().getWindow();
+        stg.close();
     }
 
     /**
