@@ -30,13 +30,13 @@ public class InfoController {
     @FXML
     private GridPane plateau;
 
-    public void afficher(Joueur joueur) {
+    public void afficher(Joueur joueur , Jeu game) {
         String info_joueur = joueur.getNom_joueur() + "\n" + joueur.getMeilleur_score_personnel() + "\n"
-                + joueur.partie.getIndice_actuel() + "\n" + joueur.partie.getScore_actuel();
+                + joueur.partie.getIndice_actuel() + "\n" + joueur.partie.getScore_actuel()+"\n"+game.set_meilleur_score_global();
         infos.setText(info_joueur);
         this.setPlateau(joueur);
         try {
-            this.deroulement_jeu(joueur);
+            this.deroulement_jeu(joueur,  game);
         } catch (Exception e) {
 
         }
@@ -63,7 +63,7 @@ public class InfoController {
         return found;
     }
 
-    public void deroulement_jeu(Joueur joueur) {
+    public void deroulement_jeu(Joueur joueur , Jeu game) {
         Button btn = Recherche(joueur.partie.getIndice_actuel());
         btn.setBorder(new Border(new BorderStroke(Color.BLACK,
                 BorderStrokeStyle.SOLID, CornerRadii.EMPTY, BorderWidths.DEFAULT)));
@@ -73,8 +73,14 @@ public class InfoController {
                     Dessiner_perso(((Button) node));
                     String info_joueur = joueur.getNom_joueur() + "\n" +
                             joueur.getMeilleur_score_personnel() + "\n"
+
+                            + joueur.partie.getIndice_actuel() + "\n" + joueur.partie.getScore_actuel()
+                            +"\n"+game.set_meilleur_score_global();
+                    System.out.println(info_joueur);        
+
                             + joueur.partie.getIndice_actuel() + "\n" + joueur.partie.getScore_actuel();
                     System.out.println(info_joueur);
+
                     infos.setText(info_joueur);
                     String color = joueur.partie.getPlateau().getTab_cases()[joueur.partie.getIndice_actuel()]
                             .getCouleur();
