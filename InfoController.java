@@ -145,6 +145,11 @@ public class InfoController {
                             ((Button) node2).setBorder(null);
                         }
                     }
+                    if (joueur.partie.getIndice_actuel() == 99) {
+                        if (joueur.partie.getScore_actuel() > joueur.getMeilleur_score_personnel()) {
+                            joueur.setMeilleur_score_personnel(joueur.partie.getScore_actuel());
+                        }
+                    }
                 } else {
                     // Exception
                     System.out.println("case ghalta");
