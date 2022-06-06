@@ -1,6 +1,6 @@
 
 public class CaseBonus extends Case {
-  private String couleur = "green";
+  private String couleur = "#7dda32";
 
   @Override
   public String getCouleur() {

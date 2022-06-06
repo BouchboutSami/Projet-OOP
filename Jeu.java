@@ -34,9 +34,9 @@ public class Jeu implements Serializable {
       System.out.println("\nSerialisation terminée avec succès...\n");
 
     } catch (FileNotFoundException e) {
-      e.printStackTrace();
+
     } catch (IOException e) {
-      e.printStackTrace();
+
     }
   }
 

@@ -1,6 +1,6 @@
 
 public class CaseSaut extends Case {
-  private String couleur = "orange";
+  private String couleur = "#ff7900";
 
   @Override
   public String getCouleur() {

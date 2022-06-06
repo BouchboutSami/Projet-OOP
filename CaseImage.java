@@ -6,7 +6,7 @@ import javafx.stage.Modality;
 import javafx.stage.Stage;
 
 public class CaseImage extends CaseQuestion {
-  private String couleur = "#e322dd";
+  private String couleur = "#ff9193";
   private Parent root;
 
   public String getCouleur() {

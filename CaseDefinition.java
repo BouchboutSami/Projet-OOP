@@ -8,7 +8,7 @@ import javafx.stage.Modality;
 import javafx.stage.Stage;
 
 public class CaseDefinition extends CaseQuestion {
-  private String couleur = "blue";
+  private String couleur = "#00c3e3";
 
   private Parent root;
 

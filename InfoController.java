@@ -64,6 +64,12 @@ public class InfoController {
     }
 
     public void deroulement_jeu(Joueur joueur) {
+        String info_joueur = "\n\nUser Name: " + joueur.getNom_joueur() + "\n\n" +
+                "Personal HS: " + joueur.getMeilleur_score_personnel() + "\n\n"
+                + "Actual index: " + joueur.partie.getIndice_actuel() + "\n\n"
+                + "Actual Score: " + joueur.partie.getScore_actuel();
+        System.out.println(info_joueur);
+        infos.setText(info_joueur);
         Button btn = Recherche(joueur.partie.getIndice_actuel());
         btn.setBorder(new Border(new BorderStroke(Color.BLACK,
                 BorderStrokeStyle.SOLID, CornerRadii.EMPTY, BorderWidths.DEFAULT)));
@@ -71,11 +77,11 @@ public class InfoController {
             node.setOnMouseClicked(event -> {
                 if (((Button) node).getText().equals("" + joueur.partie.getIndice_actuel())) {
                     Dessiner_perso(((Button) node));
-                    String info_joueur = joueur.getNom_joueur() + "\n" +
-                            joueur.getMeilleur_score_personnel() + "\n"
-                            + joueur.partie.getIndice_actuel() + "\n" + joueur.partie.getScore_actuel();
-                    System.out.println(info_joueur);
-                    infos.setText(info_joueur);
+                    String infos_joueur = "\n\nUser Name: " + joueur.getNom_joueur() + "\n\n" +
+                            "Personal HS: " + joueur.getMeilleur_score_personnel() + "\n\n"
+                            + "Actual index: " + joueur.partie.getIndice_actuel() + "\n\n"
+                            + "Actual Score: " + joueur.partie.getScore_actuel();
+                    infos.setText(infos_joueur);
                     String color = joueur.partie.getPlateau().getTab_cases()[joueur.partie.getIndice_actuel()]
                             .getCouleur();
                     if (color.equals("grey") || color.equals("yellow")) {
