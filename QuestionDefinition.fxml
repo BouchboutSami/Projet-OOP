@@ -8,22 +8,25 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="551.0" prefWidth="622.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="QuestionDefinitionController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="551.0" prefWidth="622.0" style="-fx-background-color: #6747cd;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="QuestionDefinitionController">
    <children>
       <VBox alignment="CENTER" layoutX="-14.0" prefHeight="200.0" prefWidth="100.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="-14.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="0.0">
          <children>
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Find the corresponding word">
+            <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Find the corresponding word">
                <VBox.margin>
                   <Insets bottom="100.0" />
                </VBox.margin>
                <font>
-                  <Font name="Franklin Gothic Medium" size="26.0" />
+                  <Font name="Impact" size="26.0" />
                </font>
             </Text>
-            <Text fx:id="definition" strokeType="OUTSIDE" strokeWidth="0.0" text="Definition A">
+            <Text fx:id="definition" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Definition A">
                <VBox.margin>
                   <Insets bottom="75.0" />
                </VBox.margin>
+               <font>
+                  <Font name="Ebrima" size="13.0" />
+               </font>
             </Text>
             <HBox fx:id="input" alignment="CENTER" prefHeight="50.0" prefWidth="622.0" spacing="10.0">
                <opaqueInsets>
@@ -32,7 +35,7 @@
                <VBox.margin>
                   <Insets bottom="50.0" />
                </VBox.margin></HBox>
-            <Button fx:id="submit" mnemonicParsing="false" prefWidth="100.0" text="Submit" />
+            <Button fx:id="submit" mnemonicParsing="false" prefHeight="26.0" prefWidth="113.0" style="-fx-background-color: white;" text="Submit" />
          </children>
       </VBox>
    </children>

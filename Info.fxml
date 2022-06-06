@@ -159,7 +159,7 @@
                <children>
                   <Text fx:id="infos" fill="WHITE" strokeType="INSIDE" strokeWidth="0.0" text="Text" textAlignment="CENTER">
                      <VBox.margin>
-                        <Insets bottom="125.0" />
+                        <Insets bottom="100.0" />
                      </VBox.margin>
                      <font>
                         <Font name="Impact" size="23.0" />
@@ -178,7 +178,7 @@
                         <Font name="Ebrima" size="20.0" />
                      </font>
                      <VBox.margin>
-                        <Insets bottom="75.0" />
+                        <Insets bottom="65.0" />
                      </VBox.margin>
                   </Button>
                   <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">

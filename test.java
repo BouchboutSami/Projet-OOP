@@ -16,7 +16,7 @@ public class test extends Application {
             primaryStage.setTitle("Learn'nRoll");
             primaryStage.setScene(scene);
             primaryStage.show();
-            // primaryStage.setResizable(false);
+            primaryStage.setResizable(false);
         } catch (IOException e) {
             e.printStackTrace();
         }

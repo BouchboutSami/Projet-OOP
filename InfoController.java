@@ -6,7 +6,9 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.Border;
@@ -149,10 +151,23 @@ public class InfoController {
                         if (joueur.partie.getScore_actuel() > joueur.getMeilleur_score_personnel()) {
                             joueur.setMeilleur_score_personnel(joueur.partie.getScore_actuel());
                         }
+                        joueur.partie = new Partie();
+                        this.setPlateau(joueur);
+                        Dessiner_perso(Recherche(joueur.partie.getIndice_actuel()));
+                        for (Node node2 : plateau.getChildren()) {
+                            if (node2 != Recherche(joueur.partie.getIndice_actuel())) {
+                                ((Button) node2).setGraphic(null);
+                                ((Button) node2).setBorder(null);
+                            }
+                        }
                     }
                 } else {
-                    // Exception
-                    System.out.println("case ghalta");
+                    Alert alert = new Alert(AlertType.INFORMATION);
+                    alert.setTitle("Warning");
+                    alert.setHeaderText("Calculate your steps again");
+                    alert.setContentText(
+                            " - Click on OK \n - Choose the right destination ");
+                    alert.showAndWait();
                 }
                 Button btnNext = Recherche(joueur.partie.getIndice_actuel());
                 btnNext.setBorder(new Border(new BorderStroke(Color.BLACK,
