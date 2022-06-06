@@ -109,8 +109,13 @@ public class InfoController {
                 BorderStrokeStyle.SOLID, CornerRadii.EMPTY, BorderWidths.DEFAULT)));
         for (Node node : plateau.getChildren()) {
             node.setOnMouseClicked(event -> {
-                if (((Button) node).getText().equals("" + joueur.partie.getIndice_actuel())) {
+                if (((Button) node).getText().equals("" + joueur.partie.getIndice_actuel())
+                        || joueur.partie.getPlateau().getTab_cases()[Integer.parseInt(((Button) node).getText())]
+                                .getCouleur().equals("#ff9193")
+                        || joueur.partie.getPlateau().getTab_cases()[Integer.parseInt(((Button) node).getText())]
+                                .getCouleur().equals("#00c3e3")) {
                     Dessiner_perso(((Button) node));
+                    joueur.partie.setIndice_actuel(Integer.parseInt(((Button) node).getText()));
                     String infos_joueur = "\n\nUser Name: " + joueur.getNom_joueur() + "\n\n" +
                             "Personal HS: " + joueur.getMeilleur_score_personnel() + "\n\n"
                             + "Actual index: " + joueur.partie.getIndice_actuel() + "\n\n"
@@ -150,7 +155,15 @@ public class InfoController {
                     if (joueur.partie.getIndice_actuel() == 99) {
                         if (joueur.partie.getScore_actuel() > joueur.getMeilleur_score_personnel()) {
                             joueur.setMeilleur_score_personnel(joueur.partie.getScore_actuel());
+                            game.saveEtat(joueur);
                         }
+                        Alert alert = new Alert(AlertType.INFORMATION);
+                        alert.setTitle("Congratulations");
+                        alert.setHeaderText("You've just won the game");
+                        alert.setContentText(
+                                "Your score :" + joueur.partie.getScore_actuel() + "\n"
+                                        + "The global highscore is : " + game.set_meilleur_score_global());
+                        alert.showAndWait();
                         joueur.partie = new Partie();
                         this.setPlateau(joueur);
                         Dessiner_perso(Recherche(joueur.partie.getIndice_actuel()));
@@ -169,6 +182,12 @@ public class InfoController {
                             " - Click on OK \n - Choose the right destination ");
                     alert.showAndWait();
                 }
+                String infoss_joueur = "\n\nUser Name: " + joueur.getNom_joueur() + "\n\n" +
+                        "Personal HS: " + joueur.getMeilleur_score_personnel() + "\n\n"
+                        + "Actual index: " + joueur.partie.getIndice_actuel() + "\n\n"
+                        + "Actual Score: " + joueur.partie.getScore_actuel() + "\n\n"
+                        + "Global HS: " + game.set_meilleur_score_global();
+                infos.setText(infoss_joueur);
                 Button btnNext = Recherche(joueur.partie.getIndice_actuel());
                 btnNext.setBorder(new Border(new BorderStroke(Color.BLACK,
                         BorderStrokeStyle.SOLID, CornerRadii.EMPTY, BorderWidths.DEFAULT)));

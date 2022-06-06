@@ -21,7 +21,7 @@ public class Plateau implements Serializable {
             new CaseDefinition() };
         int nb_gen;
         do {
-          nb_gen = (int) (Math.random() * 100);
+          nb_gen = (int) (Math.random() * 95);
         } while (tab_cases[nb_gen] != null);
         tab_cases[nb_gen] = tab_generator[j];
       }
