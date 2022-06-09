@@ -25,7 +25,7 @@ public class Jeu implements Serializable {
 
   }
 
-  public void settabjoueur() {
+  public void settabjoueur() {// serializer le tableau des joueurs dans le fichier binaire
     try {
       FileOutputStream fileOut = new FileOutputStream("data");
       ObjectOutputStream OBF = new ObjectOutputStream(fileOut);
@@ -41,7 +41,7 @@ public class Jeu implements Serializable {
     }
   }
 
-  public Joueur authenticate(String username) {
+  public Joueur authenticate(String username) {// recuperer un joueur avec son username
     Joueur joueur1;
     gettabjoueur();
     joueur1 = this.joueurs.get(username);
@@ -55,13 +55,13 @@ public class Jeu implements Serializable {
     return joueur1;
   }
 
-  public void saveEtat(Joueur joueur) {
+  public void saveEtat(Joueur joueur) {// sauvegarde l'etat des
     joueur.Afficher_infos();
     this.joueurs.put(joueur.getNom_joueur(), joueur);
     settabjoueur();
   }
 
-  public String set_meilleur_score_global() {
+  public String set_meilleur_score_global() {// permet de recuperer le meilleur score global de tout les joueurs
     List<Integer> intValues = new ArrayList<>();
     for (String name : joueurs.keySet()) {
       intValues.add(joueurs.get(name).getMeilleur_score_personnel());

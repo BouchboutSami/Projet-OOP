@@ -24,7 +24,7 @@ public class QuestionDefinitionController {
     private HBox input;
 
     public void genqst(Partie partie) {
-        ArrayList<QuestionDefinition> tabqst = new ArrayList<QuestionDefinition>();
+        ArrayList<QuestionDefinition> tabqst = new ArrayList<QuestionDefinition>();// on cree un tableau de questions
         QuestionDefinition q0 = new QuestionDefinition("a room or place equipped for cooking.",
                 "Kitchen");
         QuestionDefinition q1 = new QuestionDefinition(
@@ -55,7 +55,7 @@ public class QuestionDefinitionController {
         String question = tabqst.get(rand).getDefinition();
         String reponse = tabqst.get(rand).getReponse().toLowerCase();
         definition.setText(question);
-        for (int i = 0; i < reponse.length(); i++) {
+        for (int i = 0; i < reponse.length(); i++) {// creer des champs de textes autant que la longueur de la reponse
             TextField textField = new TextField();
             textField.setId(Integer.toString(i));
             textField.setPrefHeight(40);
@@ -72,7 +72,7 @@ public class QuestionDefinitionController {
             }));
             input.getChildren().add(textField);
         }
-        submit.setOnMouseClicked(e -> {
+        submit.setOnMouseClicked(e -> {// en cliquant on compare le mot introduit avec la réponse
             String rep = "";
             for (Node node : input.getChildren()) {
                 rep += ((TextField) node).getText();
@@ -82,7 +82,7 @@ public class QuestionDefinitionController {
                 } else {
                     partie.AjouterScore(-10);
                 }
-                Stage stage = (Stage) node.getScene().getWindow();
+                Stage stage = (Stage) node.getScene().getWindow();// aprés avoir soumis la réponse on quitte la fenetre
                 stage.close();
             }
 

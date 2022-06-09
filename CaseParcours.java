@@ -12,6 +12,6 @@ public class CaseParcours extends Case {
 
   @Override
   public void ActionCase(Partie partie) {
-    System.out.println("hello");
+    System.out.println("Case parcours");
   }
 }

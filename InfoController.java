@@ -77,7 +77,7 @@ public class InfoController {
 
     }
 
-    public void setPlateau(Joueur joueur) {
+    public void setPlateau(Joueur joueur) {// initialiser le plateau graphiquement
         for (Node node : plateau.getChildren()) {
             int indice = Integer.parseInt(((Button) node).getText());
             String style = node.getStyle();
@@ -88,7 +88,7 @@ public class InfoController {
 
     }
 
-    public Button Recherche(int indice) {
+    public Button Recherche(int indice) {// on lui donnant l'indice dans le plateau il retourne le bouton correspondant
         Button found = new Button();
         for (Node node : plateau.getChildren()) {
             if (((Button) node).getText().equals("" + indice)) {
@@ -133,7 +133,8 @@ public class InfoController {
                     infos.setText(infos_joueur);
                     String color = joueur.partie.getPlateau().getTab_cases()[joueur.partie.getIndice_actuel()]
                             .getCouleur();
-                    if (color.equals("grey") || color.equals("yellow")) {
+                    if (color.equals("grey") || color.equals("yellow")) {// on lance les dés pour les cases parcours et
+                                                                         // depart
                         LancerDe.setOnMouseClicked(e -> {
                             int chiffreUn = 1 + ((int) (Math.random() * 6));
                             int chiffreDeux = 1 + ((int) (Math.random() * 6));
@@ -161,7 +162,7 @@ public class InfoController {
                             ((Button) node2).setBorder(null);
                         }
                     }
-                    if (joueur.partie.getIndice_actuel() == 99) {
+                    if (joueur.partie.getIndice_actuel() == 99) { // si il a gagné la partie
                         if (joueur.partie.getScore_actuel() > joueur.getMeilleur_score_personnel()) {
                             joueur.setMeilleur_score_personnel(joueur.partie.getScore_actuel());
                             game.saveEtat(joueur);
@@ -183,7 +184,7 @@ public class InfoController {
                             }
                         }
                     }
-                } else {
+                } else {// si le joueur se trompe de case
                     Alert alert = new Alert(AlertType.INFORMATION);
                     alert.setTitle("Warning");
                     alert.setHeaderText("Calculate your steps again");
@@ -204,22 +205,15 @@ public class InfoController {
         }
     }
 
-    public void Dessiner_perso(Button button) {
+    public void Dessiner_perso(Button button) {// permet de dessiner un indicateur de position dans le bouton
         Image image = new Image(getClass().getResource("./assets/RedCircle.png").toExternalForm());
         ImageView icon = new ImageView(image);
         button.setGraphic(icon);
     }
 
-    public void quitGame(ActionEvent event) {
+    public void quitGame(ActionEvent event) {// permet de quitter le jeu
         Stage stg = (Stage) plateau.getScene().getWindow();
         stg.close();
-    }
-
-    /**
-     * @return the lancerDe
-     */
-    public Button getLancerDe() {
-        return LancerDe;
     }
 
 }

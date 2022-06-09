@@ -18,15 +18,15 @@ public class CaseImageController {
     private GridPane grid;
 
     public void genqst(Partie partie) {
-        File folder = new File("./imagesQuestions");
-        File files[] = folder.listFiles();
+        File folder = new File("./imagesQuestions");// on ouvre le dossier d'images
+        File files[] = folder.listFiles();// on met les images dans un tableau
         int iterateur = 0;
         int i = (int) (Math.random() * 4);
         ArrayList<Integer> random = new ArrayList<Integer>();
         for (int k = 0; k < files.length; k++) {
             random.add(k);
         }
-        Collections.shuffle(random);
+        Collections.shuffle(random);// on recupere des images random
         for (Node node : grid.getChildren()) {
             int j = random.get(iterateur);
             ((ImageView) node).setImage(
